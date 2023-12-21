@@ -12,7 +12,7 @@ grau/schatten: #7c898b
 .headline{
     position: absolute;
     left: 32px;
-    top: 200px; 
+    top: 150px; 
 }
 
 
@@ -26,13 +26,24 @@ grau/schatten: #7c898b
     justify-content: space-between;
 }
 
-.menu-punkt{
+.menu-punkt {
     color: #253439;
     text-decoration: none;
     background-color: #7c898b;
     border-radius: 10px;
     padding: 5px;
     margin: 5px;
+    box-shadow: 1px 1px 4px #566568; 
+}
+
+.akt-menu-punkt {
+    color: #B29E84;
+    text-decoration: none;
+    background-color: #7c898b;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 1px 1px 4px #566568; 
 }
 
 .menu-punkt:hover{
@@ -65,7 +76,7 @@ h1 {
 .sub-h1{
     font-family: 'Open Sans', sans-serif;
     color: #7c898b;
-}
+    font-size: 12pt;
 }
 
 h2 {
