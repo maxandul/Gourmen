@@ -9,19 +9,18 @@ grau/schatten: #7c898b
 /* Kopfzeile */
 
 .logo-header{
-    width: 150px
+    width: 200px
 }
 
 .headline{
     position: absolute;
     left: 32px;
-    top: 150px; 
+    top: 230px; 
 }
 
 
 .menu {
-    cursor: pointer;
-    position: absolute;
+        position: absolute;
     right: 32px;
     left: 32px;
     display: flex;
@@ -30,6 +29,7 @@ grau/schatten: #7c898b
 }
 
 .menu-punkt {
+    cursor: pointer;
     color: #253439;
     text-decoration: none;
     background-color: #7c898b;
@@ -73,13 +73,13 @@ grau/schatten: #7c898b
 body {
     background-color: #253439;
     font-family: 'Open Sans', sans-serif;
-    font-size: 12pt;
+    font-size: 16pt;
 }
 
 h1 {
     font-family: 'Roboto', sans-serif;
     color: #B29E84;
-    font-size: 28pt;
+    font-size: 46pt;
 }
 
 .sub-h1{
@@ -104,18 +104,45 @@ p {
 
 .rechner{
     position: absolute;
-    top: 250px;
+    top: 380px;
     color: #7c898b;
-    font-size: 12pt;
+    font-size: 16pt;
+    left: 32px;
 }
 
 .ergebnisse{
     position: absolute;
-    top: 500px;
+    top: 750px;
     color: #253439;
     background-color: #7c898b;
+    font-size: 16pt;
     border-radius: 10px;
     padding: 5px;
     margin: 5px;
     box-shadow: 1px 1px 4px #566568;
+    left: 32px;
+    }
+
+
+.input-rechner {
+        font-size: 16pt; 
+        padding: 5px; 
+    }
+
+    .button {
+        color: #253439; /* Textfarbe */
+        background-color: #B29E84; /* Hintergrundfarbe */
+        border: none; /* Kein Rand */
+        border-radius: 10px; /* Abgerundete Ecken */
+        padding: 10px 15px; /* Innenabstand */
+        margin: 10px; /* Außenabstand */
+        box-shadow: 1px 1px 4px #9f8c75; /* Schatten */
+        font-family: 'Open Sans', sans-serif; /* Schriftart */
+        font-size: 14pt; /* Größere Schriftgröße */
+        cursor: pointer; /* Cursor-Stil */
+        transition: background-color 0.3s; /* Sanfter Übergang für Hintergrundfarbe */
+    }
+    
+    .button:hover {
+        color: #7c898b; /* Hintergrundfarbe beim Hover */
     }

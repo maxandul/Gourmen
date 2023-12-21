@@ -24,19 +24,19 @@
     <input class="input-rechner" type="number" id="rechnung" min="0" max="5000"><br><br>
 
     <label for="vielfrasse">Anzahl Vielfrasse:</label>
-    <input type="number" id="vielfrasse" min="2" max="50"><br><br>
+    <input class="input-rechner" type="number" id="vielfrasse" min="2" max="50"><br><br>
 
     <label for="genuegsame">Anzahl Genügsame:</label>
-    <input type="number" id="genuegsame" min="2" max="50"><br><br>
+    <input class="input-rechner" type="number" id="genuegsame" min="2" max="50"><br><br>
 
-    <label for="trinkgeld">Trinkgeld:</label>
-    <select id="trinkgeld">
+    <label class="input-rechner" for="trinkgeld">Trinkgeld:</label>
+    <select class="input-rechner" id="trinkgeld">
         <option value="0">0%</option>
         <option value="0.05">5%</option>
         <option value="0.10">10%</option>
     </select><br><br>
-    <button onclick="berechneTotal()">Start</button>
-    <button onclick="loescheAlles()">Löschen</button>
+    <button class="button" onclick="berechneTotal()">Start</button>
+    <button class="button" onclick="loescheAlles()">Löschen</button>
     </div>
 
         <div class="ergebnisse" id="ergebnisse"></div>
@@ -68,7 +68,6 @@
             document.getElementById('trinkgeld').selectedIndex = 0;
             document.getElementById('ergebnisse').innerHTML = '';
         }
-    </script>
-        
+    </script> 
 </body>
 </html>
