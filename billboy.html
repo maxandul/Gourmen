@@ -15,9 +15,60 @@
             <a class="menu-punkt" href="index.html">Home</a>
             <a class="akt-menu-punkt" href="billboy.html">BillBoy</a>
             <a class="menu-punkt" href="agenda.html">Agenda</a>
-            <a class="menu-punkt" href="jahresberichte.html">Jahresberichte</a>
+            <a class="menu-punkt" href="berichte.html">Berichte</a>
         </div> 
     </div>
     <h1 class="headline">BillBoy <span class="sub-h1">by Gourmen</span></h1>
-    </body>
+    <div class="rechner">
+    <label for="rechnung">Rechnungsbetrag:</label>
+    <input class="input-rechner" type="number" id="rechnung" min="0" max="5000"><br><br>
+
+    <label for="vielfrasse">Anzahl Vielfrasse:</label>
+    <input type="number" id="vielfrasse" min="2" max="50"><br><br>
+
+    <label for="genuegsame">Anzahl Genügsame:</label>
+    <input type="number" id="genuegsame" min="2" max="50"><br><br>
+
+    <label for="trinkgeld">Trinkgeld:</label>
+    <select id="trinkgeld">
+        <option value="0">0%</option>
+        <option value="0.05">5%</option>
+        <option value="0.10">10%</option>
+    </select><br><br>
+    <button onclick="berechneTotal()">Start</button>
+    <button onclick="loescheAlles()">Löschen</button>
+    </div>
+
+        <div class="ergebnisse" id="ergebnisse"></div>
+    <script>
+        function berechneTotal() {
+            const rechnung = parseFloat(document.getElementById('rechnung').value);
+            const vielfrasse = parseInt(document.getElementById('vielfrasse').value);
+            const genuegsame = parseInt(document.getElementById('genuegsame').value);
+            const trinkgeld = parseFloat(document.getElementById('trinkgeld').value);
+    
+            const total = rechnung + (rechnung * trinkgeld);
+            const gruppe = vielfrasse + genuegsame;
+            const durchschnitt = total / gruppe;
+            const betrag1 = (total / gruppe) + (total / gruppe * 0.25 * genuegsame / vielfrasse);
+            const betrag2 = (total / gruppe) * 0.75;
+    
+            document.getElementById('ergebnisse').innerHTML = 
+                'Total: ' + total.toFixed(2) + ' CHF<br>' +
+                'Gruppe: ' + gruppe + '<br>' +
+                'Durchschnitt: ' + durchschnitt.toFixed(2) + ' CHF<br>' +
+                'Betrag 1: ' + betrag1.toFixed(2) + ' CHF<br>' +
+                'Betrag 2: ' + betrag2.toFixed(2) + ' CHF';
+        }
+    
+        function loescheAlles() {
+            document.getElementById('rechnung').value = '';
+            document.getElementById('vielfrasse').value = '';
+            document.getElementById('genuegsame').value = '';
+            document.getElementById('trinkgeld').selectedIndex = 0;
+            document.getElementById('ergebnisse').innerHTML = '';
+        }
+    </script>
+        
+</body>
 </html>

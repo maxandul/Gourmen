@@ -4,6 +4,10 @@ beige: #B29E84
 grau/schatten: #7c898b
 */
 
+
+
+/* Kopfzeile */
+
 .logo-header{
     width: calc(100vw*0.2); 
     max-width: 150px;
@@ -61,6 +65,8 @@ grau/schatten: #7c898b
 }
 
 
+/* Body */
+
 body {
     background-color: #253439;
     font-family: 'Open Sans', sans-serif;
@@ -88,3 +94,25 @@ p {
     font-family: 'Open Sans', sans-serif;
     color: #7c898b;
 }
+
+
+
+/* Rechner */
+
+.rechner{
+    position: absolute;
+    top: 250px;
+    color: #7c898b;
+    font-size: 12pt;
+}
+
+.ergebnisse{
+    position: absolute;
+    top: 500px;
+    color: #253439;
+    background-color: #7c898b;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 1px 1px 4px #566568;
+    }
