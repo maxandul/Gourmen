@@ -9,8 +9,7 @@ grau/schatten: #7c898b
 /* Kopfzeile */
 
 .logo-header{
-    width: calc(100vw*0.2); 
-    max-width: 150px;
+    width: 150px
 }
 
 .headline{
