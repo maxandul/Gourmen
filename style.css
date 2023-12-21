@@ -1,0 +1,68 @@
+/* 
+dunkelblau: #253439
+beige: #B29E84
+grau/schatten: #7c898b
+*/
+
+.logo-header{
+    width: calc(100vw*0.1); 
+}
+
+.headline{
+    position: absolute;
+    left: 50px;
+    top: 150px; 
+}
+
+.menu {
+    cursor: pointer;
+    position: absolute;
+    right: 32px;
+    left: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-punkt{
+    color: #7c898b;
+    text-decoration: none;
+}
+
+.menu-punkt:hover{
+    color: #7c898b;
+    text-decoration: underline ;
+}
+
+.bar {
+    display: block;
+    width: calc(100vw*0.8);
+    height: 12pt;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+
+body {
+    background-color: #253439;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #B29E84;
+    font-size: 28pt;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: #7c898b;
+}
