@@ -38,6 +38,8 @@ grau/schatten: #7c898b
     padding: 5px;
     margin: 5px;
     box-shadow: 1px 1px 4px #566568; 
+    display: block;
+    margin-bottom: 10px;
 }
 
 .akt-menu-punkt {
@@ -48,6 +50,8 @@ grau/schatten: #7c898b
     padding: 5px;
     margin: 5px;
     box-shadow: 1px 1px 4px #566568; 
+    display: block;
+    margin-bottom: 10px;
 }
 
 .menu-punkt:hover{
