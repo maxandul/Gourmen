@@ -264,6 +264,20 @@ p {
     margin-right: 15px;
 }
 
+.ergebnistitelFett {
+    font-weight: bold;
+    text-align: left;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.ergebniswertFett {
+    font-weight: bold;
+    text-align: right;
+    flex: 1;
+    margin-right: 15px;
+}
+
 /* Allgemeiner Stil für Tabellen-Container */
 .agendaTabelle, .naechsteTermine {
     left: 15px; /* Kleiner Rand links */

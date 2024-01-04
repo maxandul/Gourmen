@@ -39,6 +39,10 @@
 
         <div class="rechner">
             <div class="rechner-zeile">
+                <label for="restaurant">Restaurant:</label>
+                <input class="input-rechner" type="text" id="restaurant">
+            </div>
+            <div class="rechner-zeile">
                 <label for="rechnung">Rechnungsbetrag:</label>
                 <input class="input-rechner" type="number" id="rechnung" min="0" max="5000">
             </div>
@@ -61,15 +65,17 @@
             <div class="rechner-buttons">
                 <button class="button" onclick="berechneTotal()">Start</button>
                 <button class="button" onclick="loescheAlles()">Löschen</button>
+                <button class="button" onclick="speichereErgebnisse()">Speichern</button>
             </div>
         </div>
 
         <div class="ergebnisse" id="ergebnisse">
-            <div class="ergebniszeile"><span class="ergebnistitel">Total:</span> <span class="ergebniswert" id="totalErgebnis">0 CHF</span></div>
-            <div class="ergebniszeile"><span class="ergebnistitel">Gruppe:</span> <span class="ergebniswert" id="gruppeErgebnis">0</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitelFett">Total:</span> <span class="ergebniswertFett" id="totalErgebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag 1:</span> <span class="ergebniswertFett" id="betrag1Ergebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag 2:</span> <span class="ergebniswertFett" id="betrag2Ergebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Restaurant:</span> <span class="ergebniswert" id="restaurantErgebnis">-</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Gruppengrösse:</span> <span class="ergebniswert" id="gruppeErgebnis">0 Pers.</span></div>
             <div class="ergebniszeile"><span class="ergebnistitel">Durchschnitt:</span> <span class="ergebniswert" id="durchschnittErgebnis">0 CHF</span></div>
-            <div class="ergebniszeile"><span class="ergebnistitel">Betrag 1:</span> <span class="ergebniswert" id="betrag1Ergebnis">0 CHF</span></div>
-            <div class="ergebniszeile"><span class="ergebnistitel">Betrag 2:</span> <span class="ergebniswert" id="betrag2Ergebnis">0 CHF</span></div>
         </div>
 
         <script>
@@ -78,27 +84,50 @@
                 const vielfrasse = parseInt(document.getElementById('vielfrasse').value);
                 const genuegsame = parseInt(document.getElementById('genuegsame').value);
                 const trinkgeld = parseFloat(document.getElementById('trinkgeld').value);
-    
+                const restaurantName = document.getElementById('restaurant').value;
+
                 const total = rechnung + (rechnung * trinkgeld);
                 const gruppe = vielfrasse + genuegsame;
                 const durchschnitt = total / gruppe;
                 const betrag1 = (total / gruppe) + (total / gruppe * 0.25 * genuegsame / vielfrasse);
                 const betrag2 = (total / gruppe) * 0.75;
     
+                document.getElementById('restaurantErgebnis').textContent = restaurantName || "Nicht angegeben";
                 document.getElementById('totalErgebnis').textContent = total.toFixed(2) + ' CHF';
-                document.getElementById('gruppeErgebnis').textContent = gruppe;
+                document.getElementById('gruppeErgebnis').textContent = gruppe + ' Pers.';
                 document.getElementById('durchschnittErgebnis').textContent = durchschnitt.toFixed(2) + ' CHF';
                 document.getElementById('betrag1Ergebnis').textContent = betrag1.toFixed(2) + ' CHF';
                 document.getElementById('betrag2Ergebnis').textContent = betrag2.toFixed(2) + ' CHF';
             }   
     
             function loescheAlles() {
+                document.getElementById('restaurantErgebnis').textContent = '-';
                 document.getElementById('totalErgebnis').textContent = '0 CHF';
-                document.getElementById('gruppeErgebnis').textContent = '0';
+                document.getElementById('gruppeErgebnis').textContent = '0 Pers.';
                 document.getElementById('durchschnittErgebnis').textContent = '0 CHF';
                 document.getElementById('betrag1Ergebnis').textContent = '0 CHF';
                 document.getElementById('betrag2Ergebnis').textContent = '0 CHF';
             }
+
+            function speichereErgebnisse() {
+                // Bestätigungsdialog anzeigen
+                var bestaetigung = confirm("Ergebnisse werden heruntergeladen. Stelle die Datei in unseren Chat.");
+
+                // Wenn der Benutzer auf "OK" klickt
+                if (bestaetigung) {
+                    const ergebnisse = document.getElementById('ergebnisse').textContent;
+                    const blob = new Blob([ergebnisse], { type: "text/plain;charset=utf-8" });
+                    const url = URL.createObjectURL(blob);
+
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = "ergebnisse.txt";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }
+            }    
         </script> 
     </div>
     
