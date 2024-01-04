@@ -196,8 +196,7 @@ p {
 }
 
 .rechner-zeile .input-rechner {
-    text-align: right;
-    flex-basis: 120px; /* Stellt die Breite des Eingabefeldes ein */
+    flex-grow: 1;
     margin-right: 15px;
 }
 
