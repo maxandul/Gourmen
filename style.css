@@ -6,10 +6,21 @@ grau/schatten: #7c898b
 
 
 
-/* Kopfzeile */
+.kopfzeile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #253439; /* Hintergrundfarbe des Blocks */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 32px; /* Vertikaler und horizontaler Abstand */
+    z-index: 1000;
+}
 
-.logo-header{
-    width: 200px
+.logo-header {
+    width: 80px;
 }
 
 .headline{
@@ -19,13 +30,13 @@ grau/schatten: #7c898b
 }
 
 
+.inhalt{
+    padding-top: 100px;
+}
+
 .menu {
-        position: absolute;
-    right: 32px;
-    left: 32px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .menu-punkt {
@@ -37,7 +48,7 @@ grau/schatten: #7c898b
     padding: 5px;
     margin: 5px;
     box-shadow: 1px 1px 4px #566568; 
-    display: block;
+    display: inline-flex;
     margin-bottom: 10px;
 }
 
@@ -49,7 +60,7 @@ grau/schatten: #7c898b
     padding: 5px;
     margin: 5px;
     box-shadow: 1px 1px 4px #566568; 
-    display: block;
+    display: inline-flex;
     margin-bottom: 10px;
 }
 
@@ -57,15 +68,7 @@ grau/schatten: #7c898b
     color: #B29E84;
 }
 
-.bar {
-    display: block;
-    width: calc(100vw*0.8);
-    height: 12pt;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #333;
-}
+
 
 
 /* Body */
@@ -103,16 +106,12 @@ p {
 /* Rechner */
 
 .rechner{
-    position: absolute;
-    top: 380px;
     color: #7c898b;
     font-size: 16pt;
     left: 32px;
 }
 
 .ergebnisse{
-    position: absolute;
-    top: 750px;
     color: #253439;
     background-color: #7c898b;
     font-size: 16pt;
@@ -150,8 +149,6 @@ p {
 
 /* Allgemeiner Stil für Tabellen-Container */
 .agendaTabelle, .naechsteTermine {
-    position: absolute;
-    top: 360px; /* Anpassen basierend auf der Höhe der Menüleiste und des Logos */
     left: 15px; /* Kleiner Rand links */
     right: 15px; /* Kleiner Rand rechts */
     font-family: 'Open Sans', sans-serif; /* Schriftart */

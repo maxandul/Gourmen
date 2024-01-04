@@ -9,79 +9,83 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="menu">
+    <div class="kopfzeile">
         <img class="logo-header" src="images/logo.jpg">
-        <div>
+        <div class="menu">
             <a class="menu-punkt" href="index.html">Home</a>
             <a class="menu-punkt" href="billboy.html">BillBoy</a>
             <a class="akt-menu-punkt" href="agenda.html">Agenda</a>
             <a class="menu-punkt" href="berichte.html">Berichte</a>
-        </div> 
         </div>
-    <h1 class="headline">Agenda</h1>
+    </div>
 
-    <div class="agendaTabelle" id="agendaTabelle"></div>
+    <div class="inhalt">
 
-    <script>
-        function ladeCSVDatei(url) {
-            fetch(url)
-                .then(response => response.text())
-                .then(text => {
-                    const data = parseCSV(text);
-                    zeigeTabelle(data);
-                })
+        <h1>Agenda</h1>
+
+        <div class="agendaTabelle" id="agendaTabelle"></div>
+
+        <script>
+            function ladeCSVDatei(url) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(text => {
+                        const data = parseCSV(text);
+                        zeigeTabelle(data);
+                    })
                 .catch(error => console.error('Fehler beim Laden der CSV:', error));
-        }
-    
-        function parseCSV(csvText) {
-            const lines = csvText.split('\n');
-            const result = [];
-            const headers = lines[0].split(';');
-    
-            for (let i = 1; i < lines.length; i++) {
-                const obj = {};
-                const currentline = lines[i].split(';');
-    
-                for (let j = 0; j < headers.length; j++) {
-                    obj[headers[j]] = currentline[j];
-                }
-    
-                result.push(obj);
             }
     
-            return result;
-        }
-
-        function formatiereDatum(isoDatum) {
-            const datumObj = new Date(isoDatum);
-            const tag = datumObj.getDate().toString().padStart(2, '0');
-            const monat = (datumObj.getMonth() + 1).toString().padStart(2, '0'); // Monat beginnt bei 0
-            const jahr = datumObj.getFullYear();
-            return `${tag}.${monat}.${jahr}`; // Format: TT.MM.JJJJ
-        }
+            function parseCSV(csvText) {
+                const lines = csvText.split('\n');
+                const result = [];
+                const headers = lines[0].split(';');
     
-        function zeigeTabelle(data) {
-            let tabelle = "<table border='1'>";
-                tabelle += "<tr><th>Datum</th><th>Anlass</th><th>Verantwortlich</th><th>Restaurant</th></tr>";
-
-
-                data.forEach(function(row) {
-                    const formatiertesDatum = formatiereDatum(row["Datum"]);
-                    tabelle += "<tr>";
-                    tabelle += "<td>" + formatiertesDatum + "</td>"; 
-                    tabelle += "<td>" + row["Anlass"] + "</td>";
-                    tabelle += "<td>" + row["Verantwortlich"] + "</td>";
-                    tabelle += "<td>" + row["Restaurant"] + "</td>";
-                    tabelle += "</tr>";
-                });
-
-            tabelle += "</table>";
-            document.getElementById('agendaTabelle').innerHTML = tabelle;
-        }
+                for (let i = 1; i < lines.length; i++) {
+                    const obj = {};
+                    const currentline = lines[i].split(';');
     
-        // URL der CSV-Datei im Repository
-        ladeCSVDatei('https://maxandul.github.io/Gourmen/data/agenda.csv');
-    </script>
+                    for (let j = 0; j < headers.length; j++) {
+                    obj[headers[j]] = currentline[j];
+                    }
     
+                    result.push(obj);
+                }
+    
+                return result;
+            }
+
+            function formatiereDatum(isoDatum) {
+                const datumObj = new Date(isoDatum);
+                const tag = datumObj.getDate().toString().padStart(2, '0');
+                const monat = (datumObj.getMonth() + 1).toString().padStart(2, '0'); // Monat beginnt bei 0
+                const jahr = datumObj.getFullYear();
+                return `${tag}.${monat}.${jahr}`; // Format: TT.MM.JJJJ
+            }
+    
+            function zeigeTabelle(data) {
+                let tabelle = "<table border='1'>";
+                    tabelle += "<tr><th>Datum</th><th>Anlass</th><th>Verantwortlich</th><th>Restaurant</th></tr>";
+
+
+                    data.forEach(function(row) {
+                        const formatiertesDatum = formatiereDatum(row["Datum"]);
+                        tabelle += "<tr>";
+                        tabelle += "<td>" + formatiertesDatum + "</td>"; 
+                        tabelle += "<td>" + row["Anlass"] + "</td>";
+                        tabelle += "<td>" + row["Verantwortlich"] + "</td>";
+                        tabelle += "<td>" + row["Restaurant"] + "</td>";
+                        tabelle += "</tr>";
+                    });
+
+                tabelle += "</table>";
+                document.getElementById('agendaTabelle').innerHTML = tabelle;
+            }
+    
+            // URL der CSV-Datei im Repository
+            ladeCSVDatei('https://maxandul.github.io/Gourmen/data/agenda.csv');
+        </script>
+    </div>
+       
     </body>
 </html>
