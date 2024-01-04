@@ -109,7 +109,7 @@ grau/schatten: #7c898b
     min-height: 100vh;
     display: block;
     z-index: 98;
-    background-color: #7c898b;
+    background-color: #B29E84;
     padding-top: 120px;
     transition: 0.4s;
 
@@ -126,14 +126,14 @@ grau/schatten: #7c898b
         margin: 0 auto 16px;
         text-align: center; 
         padding: 12px 16px;
-        background-color: #B29E84;
+        background-color: #7c898b;
 
         color: #253439;
         text-decoration: none;
 }
 
 .mobile-nav a:hover {
-    color: #7c898b;
+    color: #B29E84;
 }
 
 /* Body */
@@ -148,6 +148,7 @@ h1 {
     font-family: 'Roboto', sans-serif;
     color: #B29E84;
     font-size: 46pt;
+    margin-left: 35px;
 }
 
 .sub-h1{
@@ -176,6 +177,55 @@ p {
     left: 32px;
 }
 
+
+.input-rechner {
+        font-size: 16pt; 
+        padding: 5px; 
+    }
+
+.rechner-zeile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.rechner-zeile label {
+    text-align: left;
+    flex-basis: 40%; /* Stellt die Breite des Labels ein */
+    padding-left: 15px;
+}
+
+.rechner-zeile .input-rechner {
+    text-align: right;
+    flex-basis: 120px; /* Stellt die Breite des Eingabefeldes ein */
+    margin-right: 15px;
+}
+
+.rechner-buttons {
+    display: flex;
+    justify-content: center; /* Zentriert die Buttons */
+    gap: 10px;
+}   
+
+.button {
+    color: #253439; /* Textfarbe */
+    background-color: #B29E84; /* Hintergrundfarbe */
+    border: none; /* Kein Rand */
+    border-radius: 10px; /* Abgerundete Ecken */
+    padding: 10px 15px; /* Innenabstand */
+    margin: 30px; /* Außenabstand */
+    box-shadow: 1px 1px 4px #9f8c75; /* Schatten */
+    font-family: 'Open Sans', sans-serif; /* Schriftart */
+    font-size: 14pt; /* Größere Schriftgröße */
+    cursor: pointer; /* Cursor-Stil */
+    transition: background-color 0.3s; /* Sanfter Übergang für Hintergrundfarbe */
+}
+    
+    .button:hover {
+        color: #7c898b; /* Hintergrundfarbe beim Hover */
+    }
+
+
 .ergebnisse{
     color: #253439;
     background-color: #7c898b;
@@ -186,31 +236,33 @@ p {
     box-shadow: 1px 1px 4px #566568;
     left: 32px;
     }
-
-
-.input-rechner {
-        font-size: 16pt; 
-        padding: 5px; 
-    }
-
-    .button {
-        color: #253439; /* Textfarbe */
-        background-color: #B29E84; /* Hintergrundfarbe */
-        border: none; /* Kein Rand */
-        border-radius: 10px; /* Abgerundete Ecken */
-        padding: 10px 15px; /* Innenabstand */
-        margin: 10px; /* Außenabstand */
-        box-shadow: 1px 1px 4px #9f8c75; /* Schatten */
-        font-family: 'Open Sans', sans-serif; /* Schriftart */
-        font-size: 14pt; /* Größere Schriftgröße */
-        cursor: pointer; /* Cursor-Stil */
-        transition: background-color 0.3s; /* Sanfter Übergang für Hintergrundfarbe */
-    }
     
-    .button:hover {
-        color: #7c898b; /* Hintergrundfarbe beim Hover */
-    }
+.ergebnisse p {
+    color: #253439;
+    background-color: #7c898b;
+    font-size: 16pt;
+    margin: 5px;
+    left: 32px;
+}
 
+
+.ergebniszeile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.ergebnistitel {
+    text-align: left;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.ergebniswert {
+    text-align: right;
+    flex: 1;
+    margin-right: 15px;
+}
 
 /* Allgemeiner Stil für Tabellen-Container */
 .agendaTabelle, .naechsteTermine {

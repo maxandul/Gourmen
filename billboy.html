@@ -38,28 +38,39 @@
         <h1>BillBoy</h1>
 
         <div class="rechner">
-            <label for="rechnung">Rechnungsbetrag:</label>
-            <input class="input-rechner" type="number" id="rechnung" min="0" max="5000"><br><br>
-
-            <label for="vielfrasse">Anzahl Vielfrasse:</label>
-            <input class="input-rechner" type="number" id="vielfrasse" min="2" max="50"><br><br>
-
-            <label for="genuegsame">Anzahl Genügsame:</label>
-            <input class="input-rechner" type="number" id="genuegsame" min="2" max="50"><br><br>
-
-            <label class="input-rechner" for="trinkgeld">Trinkgeld:</label>
-            <select class="input-rechner" id="trinkgeld">
-            <option value="0">0%</option>
-            <option value="0.05">5%</option>
-            <option value="0.10">10%</option>
-
-            </select><br><br>
-
-            <button class="button" onclick="berechneTotal()">Start</button>
-            <button class="button" onclick="loescheAlles()">Löschen</button>
+            <div class="rechner-zeile">
+                <label for="rechnung">Rechnungsbetrag:</label>
+                <input class="input-rechner" type="number" id="rechnung" min="0" max="5000">
+            </div>
+            <div class="rechner-zeile">
+                <label for="vielfrasse">Anzahl Vielfrasse:</label>
+                <input class="input-rechner" type="number" id="vielfrasse" min="2" max="50">
+            </div>
+            <div class="rechner-zeile">
+                <label for="genuegsame">Anzahl Genügsame:</label>
+                <input class="input-rechner" type="number" id="genuegsame" min="2" max="50">
+            </div>
+            <div class="rechner-zeile">
+                <label for="trinkgeld">Trinkgeld:</label>
+                <select class="input-rechner" id="trinkgeld">
+                    <option value="0">0%</option>
+                    <option value="0.05">5%</option>
+                    <option value="0.10">10%</option>
+                </select>
+            </div>
+            <div class="rechner-buttons">
+                <button class="button" onclick="berechneTotal()">Start</button>
+                <button class="button" onclick="loescheAlles()">Löschen</button>
+            </div>
         </div>
 
-        <div class="ergebnisse" id="ergebnisse"></div>
+        <div class="ergebnisse" id="ergebnisse">
+            <div class="ergebniszeile"><span class="ergebnistitel">Total:</span> <span class="ergebniswert" id="totalErgebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Gruppe:</span> <span class="ergebniswert" id="gruppeErgebnis">0</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Durchschnitt:</span> <span class="ergebniswert" id="durchschnittErgebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Betrag 1:</span> <span class="ergebniswert" id="betrag1Ergebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Betrag 2:</span> <span class="ergebniswert" id="betrag2Ergebnis">0 CHF</span></div>
+        </div>
 
         <script>
             function berechneTotal() {
@@ -74,20 +85,19 @@
                 const betrag1 = (total / gruppe) + (total / gruppe * 0.25 * genuegsame / vielfrasse);
                 const betrag2 = (total / gruppe) * 0.75;
     
-                document.getElementById('ergebnisse').innerHTML = 
-                    'Total: ' + total.toFixed(2) + ' CHF<br>' +
-                    'Gruppe: ' + gruppe + '<br>' +
-                    'Durchschnitt: ' + durchschnitt.toFixed(2) + ' CHF<br>' +
-                    'Betrag 1: ' + betrag1.toFixed(2) + ' CHF<br>' +
-                    'Betrag 2: ' + betrag2.toFixed(2) + ' CHF';
+                document.getElementById('totalErgebnis').textContent = total.toFixed(2) + ' CHF';
+                document.getElementById('gruppeErgebnis').textContent = gruppe;
+                document.getElementById('durchschnittErgebnis').textContent = durchschnitt.toFixed(2) + ' CHF';
+                document.getElementById('betrag1Ergebnis').textContent = betrag1.toFixed(2) + ' CHF';
+                document.getElementById('betrag2Ergebnis').textContent = betrag2.toFixed(2) + ' CHF';
             }   
     
             function loescheAlles() {
-                document.getElementById('rechnung').value = '';
-                document.getElementById('vielfrasse').value = '';
-                document.getElementById('genuegsame').value = '';
-                document.getElementById('trinkgeld').selectedIndex = 0;
-                document.getElementById('ergebnisse').innerHTML = '';
+                document.getElementById('totalErgebnis').textContent = '0 CHF';
+                document.getElementById('gruppeErgebnis').textContent = '0';
+                document.getElementById('durchschnittErgebnis').textContent = '0 CHF';
+                document.getElementById('betrag1Ergebnis').textContent = '0 CHF';
+                document.getElementById('betrag2Ergebnis').textContent = '0 CHF';
             }
         </script> 
     </div>
