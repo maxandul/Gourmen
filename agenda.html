@@ -17,7 +17,61 @@
             <a class="akt-menu-punkt" href="agenda.html">Agenda</a>
             <a class="menu-punkt" href="berichte.html">Berichte</a>
         </div> 
-    </div>
-    <h1 class="headline">comming soon...</h1>
+        </div>
+    <h1 class="headline">Agenda</h1>
+
+    <div class="agendaTabelle" id="agendaTabelle"></div>
+
+    <script>
+        function ladeCSVDatei(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(text => {
+                    const data = parseCSV(text);
+                    zeigeTabelle(data);
+                })
+                .catch(error => console.error('Fehler beim Laden der CSV:', error));
+        }
+    
+        function parseCSV(csvText) {
+            const lines = csvText.split('\n');
+            const result = [];
+            const headers = lines[0].split(';');
+    
+            for (let i = 1; i < lines.length; i++) {
+                const obj = {};
+                const currentline = lines[i].split(';');
+    
+                for (let j = 0; j < headers.length; j++) {
+                    obj[headers[j]] = currentline[j];
+                }
+    
+                result.push(obj);
+            }
+    
+            return result;
+        }
+    
+        function zeigeTabelle(data) {
+            let tabelle = "<table border='1'>";
+                tabelle += "<tr><th>Datum</th><th>Anlass</th><th>Verantwortlich</th><th>Restaurant</th></tr>";
+
+data.forEach(function(row) {
+    tabelle += "<tr>";
+    tabelle += "<td>" + row["Datum"] + "</td>";
+    tabelle += "<td>" + row["Anlass"] + "</td>";
+    tabelle += "<td>" + row["Verantwortlich"] + "</td>";
+    tabelle += "<td>" + row["Restaurant"] + "</td>";
+    tabelle += "</tr>";
+});
+
+tabelle += "</table>";
+document.getElementById('agendaTabelle').innerHTML = tabelle;
+}
+    
+        // URL der CSV-Datei im Repository
+        ladeCSVDatei('/data/agenda.csv');
+    </script>
+    
     </body>
 </html>
