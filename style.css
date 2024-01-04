@@ -20,7 +20,7 @@ grau/schatten: #7c898b
 }
 
 .logo-header {
-    width: 80px;
+    width: 100px;
 }
 
 .headline{
@@ -234,7 +234,7 @@ p {
 
 .agendaTabelle th, .agendaTabelle td, 
 .naechsteTermine th, .naechsteTermine td {
-    border: 1px solid #253439; /* Rand der Zellen */
+    border: none; /* Rand der Zellen */
     padding: 8px; /* Innenabstand der Zellen */
     text-align: left; /* Textausrichtung */
 }
