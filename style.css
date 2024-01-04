@@ -230,6 +230,7 @@ p {
     border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellgrenzen */
     width: 100%; /* Volle Breite */
     font-size: 12pt; /* Schriftgröße */
+    border: none;
 }
 
 .agendaTabelle th, .agendaTabelle td, 
