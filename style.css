@@ -1,7 +1,10 @@
 /* 
-dunkelblau: #253439
-beige: #B29E84
-grau/schatten: #7c898b
+weiss: #FFFFFF
+silber: #B9C2C4
+grau: #6D6D6D
+hellgrau: #E8E8E8
+dunkelgrau: #3D3D3D
+gold: #947F57
 */
 
 
@@ -11,7 +14,7 @@ grau/schatten: #7c898b
     top: 0;
     left: 0;
     right: 0;
-    background-color: #253439; /* Hintergrundfarbe des Blocks */
+    background-color: #3D3D3D; /* Hintergrundfarbe des Blocks */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,43 +32,8 @@ grau/schatten: #7c898b
     top: 230px; 
 }
 
-
 .inhalt{
     padding-top: 100px;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-}
-
-.menu-punkt {
-    cursor: pointer;
-    color: #253439;
-    text-decoration: none;
-    background-color: #7c898b;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    box-shadow: 1px 1px 4px #566568; 
-    display: inline-flex;
-    margin-bottom: 10px;
-}
-
-.akt-menu-punkt {
-    color: #B29E84;
-    text-decoration: none;
-    background-color: #7c898b;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    box-shadow: 1px 1px 4px #566568; 
-    display: inline-flex;
-    margin-bottom: 10px;
-}
-
-.menu-punkt:hover{
-    color: #B29E84;
 }
 
 .hamburger{
@@ -84,7 +52,7 @@ grau/schatten: #7c898b
     display: block;
     width: 100%;
     height: 5px;
-    background-color: #B29E84;
+    background-color: #FFFFFF;
     margin: 6px 0px;
     transition: 0.4s;
 }
@@ -109,7 +77,7 @@ grau/schatten: #7c898b
     min-height: 100vh;
     display: block;
     z-index: 98;
-    background-color: #B29E84;
+    background-color: #3D3D3D;
     padding-top: 120px;
     transition: 0.4s;
 
@@ -126,35 +94,29 @@ grau/schatten: #7c898b
         margin: 0 auto 16px;
         text-align: center; 
         padding: 12px 16px;
-        background-color: #7c898b;
+        background-color: #6D6D6D;
 
-        color: #253439;
+        color: #FFFFFF;
         text-decoration: none;
 }
 
 .mobile-nav a:hover {
-    color: #B29E84;
+    color: #B9C2C4;
 }
 
 /* Body */
 
 body {
-    background-color: #253439;
+    background-color: #6D6D6D;
     font-family: 'Open Sans', sans-serif;
     font-size: 16pt;
 }
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    color: #B29E84;
+    color: #FFFFFF;
     font-size: 46pt;
     margin-left: 35px;
-}
-
-.sub-h1{
-    font-family: 'Open Sans', sans-serif;
-    color: #7c898b;
-    font-size: 12pt;
 }
 
 h2 {
@@ -164,7 +126,7 @@ h2 {
 
 p {
     font-family: 'Open Sans', sans-serif;
-    color: #7c898b;
+    color: #FFFFFF;
 }
 
 
@@ -172,7 +134,7 @@ p {
 /* Rechner */
 
 .rechner{
-    color: #7c898b;
+    color: #FFFFFF;
     font-size: 16pt;
     left: 32px;
 }
@@ -185,18 +147,19 @@ p {
 
 .rechner-zeile {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 10px;
 }
 
 .rechner-zeile label {
     text-align: left;
-    flex-basis: 40%; /* Stellt die Breite des Labels ein */
+    flex-basis: 30%; /* Stellt die Breite des Labels ein */
     padding-left: 15px;
 }
 
-.rechner-zeile .input-rechner {
+.rechner-zeile .input-rechner, .rechner-zeile select {
     flex-grow: 1;
+    flex-basis: 70%;
     margin-right: 15px;
 }
 
@@ -207,13 +170,13 @@ p {
 }   
 
 .button {
-    color: #253439; /* Textfarbe */
-    background-color: #B29E84; /* Hintergrundfarbe */
+    color: #FFFFFF; /* Textfarbe */
+    background-color: #3D3D3D; /* Hintergrundfarbe */
     border: none; /* Kein Rand */
     border-radius: 10px; /* Abgerundete Ecken */
     padding: 10px 15px; /* Innenabstand */
     margin: 30px; /* Außenabstand */
-    box-shadow: 1px 1px 4px #9f8c75; /* Schatten */
+    box-shadow: 1px 1px 4px #E8E8E8; /* Schatten */
     font-family: 'Open Sans', sans-serif; /* Schriftart */
     font-size: 14pt; /* Größere Schriftgröße */
     cursor: pointer; /* Cursor-Stil */
@@ -221,13 +184,13 @@ p {
 }
     
     .button:hover {
-        color: #7c898b; /* Hintergrundfarbe beim Hover */
+        color: #B9C2C4; /* Hintergrundfarbe beim Hover */
     }
 
 
 .ergebnisse{
-    color: #253439;
-    background-color: #7c898b;
+    color: #3D3D3D;
+    background-color: #B9C2C4;
     font-size: 16pt;
     border-radius: 10px;
     padding: 5px;
@@ -237,8 +200,8 @@ p {
     }
     
 .ergebnisse p {
-    color: #253439;
-    background-color: #7c898b;
+    color: #3D3D3D;
+    background-color: #B9C2C4;
     font-size: 16pt;
     margin: 5px;
     left: 32px;
@@ -282,10 +245,10 @@ p {
     left: 15px; /* Kleiner Rand links */
     right: 15px; /* Kleiner Rand rechts */
     font-family: 'Open Sans', sans-serif; /* Schriftart */
-    color: #253439; /* Textfarbe */
-    background-color: #7c898b; /* Hintergrundfarbe */
+    color: #3D3D3D; /* Textfarbe */
+    background-color: #B9C2C4; /* Hintergrundfarbe */
     border-radius: 10px; /* Abgerundete Ecken */
-    box-shadow: 1px 1px 4px #566568; /* Schatten */
+    box-shadow: 1px 1px 4px #E8E8E8; /* Schatten */
     padding: 5px; /* Innenabstand */
     overflow-x: auto; /* Scrollbar für horizontales Scrollen */
 }
