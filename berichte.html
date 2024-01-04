@@ -22,8 +22,7 @@
         <a href="billboy.html">BillBoy</a>
         <a href="agenda.html">Agenda</a>
         <a href="berichte.html">Berichte</a>
-    </div>
-
+    </div>  
     <script>
         const menu_btn = document.querySelector('.hamburger');
         const mobile_menu = document.querySelector('.mobile-nav');
@@ -36,6 +35,66 @@
 
     <div class="inhalt">
         <h1>Comming soon...</h1><br>
+        <canvas id="kuechenDiagramm"></canvas>
+
+        <script>
+            // Funktion zum Laden und Parsen der CSV-Daten
+            function ladeUndZeigeKuechenDaten() {
+                fetch('pfad/zu/ihrem/agenda.csv')
+                    .then(response => response.text())
+                    .then(text => {
+                        const kuechenDaten = parseCSV(text);
+                        zeigeDiagramm(kuechenDaten);
+                    })
+                    .catch(error => console.error('Fehler beim Laden der CSV:', error));
+            }
+        
+            // Einfache Funktion zum Parsen der CSV-Daten
+            function parseCSV(csvText) {
+                const lines = csvText.split('\n');
+                const kuechenStatistik = {};
+        
+                // Die Schleife beginnt bei 1, um die Kopfzeile zu überspringen
+                for (let i = 1; i < lines.length; i++) {
+                    const columns = lines[i].split(';');
+                    const kueche = columns[5]; // Küche ist die sechste Spalte
+
+                    if (kueche) {
+                        kuechenStatistik[kueche] = (kuechenStatistik[kueche] || 0) + 1;
+                    }
+                }
+
+    return kuechenStatistik;
+}
+        
+            // Funktion zum Anzeigen des Diagramms
+            function zeigeDiagramm(data) {
+                const context = document.getElementById('kuechenDiagramm').getContext('2d');
+                new Chart(context, {
+                    type: 'bar', // Balkendiagramm
+                    data: {
+                        labels: Object.keys(data),
+                        datasets: [{
+                            label: 'Anzahl der Male gegessen',
+                            data: Object.values(data),
+                            backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                            borderColor: 'rgba(0, 123, 255, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        
+            ladeUndZeigeKuechenDaten();
+        </script>
+        
     </div>
 </body>
 </html>

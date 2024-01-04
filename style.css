@@ -129,7 +129,11 @@ p {
     color: #FFFFFF;
 }
 
-
+.legende {
+    font-size: 10pt;
+    color: #FFFFFF;
+    margin-left: 15px;
+}
 
 /* Rechner */
 
@@ -192,10 +196,9 @@ p {
     color: #3D3D3D;
     background-color: #B9C2C4;
     font-size: 16pt;
-    border-radius: 10px;
     padding: 5px;
     margin: 5px;
-    box-shadow: 1px 1px 4px #566568;
+    box-shadow: 1px 1px 6px #3D3D3D;
     left: 32px;
     }
     
@@ -247,8 +250,7 @@ p {
     font-family: 'Open Sans', sans-serif; /* Schriftart */
     color: #3D3D3D; /* Textfarbe */
     background-color: #B9C2C4; /* Hintergrundfarbe */
-    border-radius: 10px; /* Abgerundete Ecken */
-    box-shadow: 1px 1px 4px #E8E8E8; /* Schatten */
+    box-shadow: 1px 1px 6px #3D3D3D; /* Schatten */
     padding: 5px; /* Innenabstand */
     overflow-x: auto; /* Scrollbar für horizontales Scrollen */
 }
