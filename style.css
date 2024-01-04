@@ -148,30 +148,31 @@ p {
     }
 
 
-    /* Agenda */
+/* Allgemeiner Stil für Tabellen-Container */
+.agendaTabelle, .naechsteTermine {
+    position: absolute;
+    top: 360px; /* Anpassen basierend auf der Höhe der Menüleiste und des Logos */
+    left: 15px; /* Kleiner Rand links */
+    right: 15px; /* Kleiner Rand rechts */
+    font-family: 'Open Sans', sans-serif; /* Schriftart */
+    color: #253439; /* Textfarbe */
+    background-color: #7c898b; /* Hintergrundfarbe */
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 1px 1px 4px #566568; /* Schatten */
+    padding: 5px; /* Innenabstand */
+    overflow-x: auto; /* Scrollbar für horizontales Scrollen */
+}
 
-    .agendaTabelle {
-        position: absolute;
-        top: 380px;
-        font-family: 'Open Sans', sans-serif; /* Schriftart */
-        color: #253439; /* Textfarbe */
-        background-color: #7c898b; /* Hintergrundfarbe */
-        border-radius: 10px; /* Abgerundete Ecken */
-        box-shadow: 1px 1px 4px #566568; /* Schatten */
-        padding: 5px; /* Innenabstand */
-        margin: 5px; /* Außenabstand */
-        overflow-x: auto; /* Scrollbar für horizontales Scrollen */
-    }
-    
-    .agendaTabelle table {
-        border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellgrenzen */
-        width: 100%; /* Volle Breite des Containers */
-        font-size: 12pt; /* Schriftgröße */
-    }
-    
-    .agendaTabelle th, .agendaTabelle td {
-        border: 1px solid #253439; /* Rand der Zellen */
-        padding: 8px; /* Innenabstand der Zellen */
-        text-align: left; /* Textausrichtung */
-    }
-    
+/* Stil für Tabellen */
+.agendaTabelle table, .naechsteTermine table {
+    border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellgrenzen */
+    width: 100%; /* Volle Breite */
+    font-size: 12pt; /* Schriftgröße */
+}
+
+.agendaTabelle th, .agendaTabelle td, 
+.naechsteTermine th, .naechsteTermine td {
+    border: 1px solid #253439; /* Rand der Zellen */
+    padding: 8px; /* Innenabstand der Zellen */
+    text-align: left; /* Textausrichtung */
+}

@@ -51,23 +51,33 @@
     
             return result;
         }
+
+        function formatiereDatum(isoDatum) {
+            const datumObj = new Date(isoDatum);
+            const tag = datumObj.getDate().toString().padStart(2, '0');
+            const monat = (datumObj.getMonth() + 1).toString().padStart(2, '0'); // Monat beginnt bei 0
+            const jahr = datumObj.getFullYear();
+            return `${tag}.${monat}.${jahr}`; // Format: TT.MM.JJJJ
+        }
     
         function zeigeTabelle(data) {
             let tabelle = "<table border='1'>";
                 tabelle += "<tr><th>Datum</th><th>Anlass</th><th>Verantwortlich</th><th>Restaurant</th></tr>";
 
-data.forEach(function(row) {
-    tabelle += "<tr>";
-    tabelle += "<td>" + row["Datum"] + "</td>";
-    tabelle += "<td>" + row["Anlass"] + "</td>";
-    tabelle += "<td>" + row["Verantwortlich"] + "</td>";
-    tabelle += "<td>" + row["Restaurant"] + "</td>";
-    tabelle += "</tr>";
-});
 
-tabelle += "</table>";
-document.getElementById('agendaTabelle').innerHTML = tabelle;
-}
+                data.forEach(function(row) {
+                    const formatiertesDatum = formatiereDatum(row["Datum"]);
+                    tabelle += "<tr>";
+                    tabelle += "<td>" + formatiertesDatum + "</td>"; 
+                    tabelle += "<td>" + row["Anlass"] + "</td>";
+                    tabelle += "<td>" + row["Verantwortlich"] + "</td>";
+                    tabelle += "<td>" + row["Restaurant"] + "</td>";
+                    tabelle += "</tr>";
+                });
+
+            tabelle += "</table>";
+            document.getElementById('agendaTabelle').innerHTML = tabelle;
+        }
     
         // URL der CSV-Datei im Repository
         ladeCSVDatei('/data/agenda.csv');

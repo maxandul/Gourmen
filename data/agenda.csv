@@ -1,51 +1,51 @@
 ﻿Datum;Anlass;Verantwortlich;Restaurant;Ort;Küche
-14.1.22;ME;Röme;Lieferservice;Volketswil;n/a
-11.2.22;ME;Kevin;Nooba;Zürich;asiatisch
-11.3.22;GV;Marco;Lieferservice;Volketswil;n/a
-8.4.22;ME;Dave;Johaniter;Zürich;schweizerisch
-13.5.22;ME;Marco;Pinochchio;Dübendorf;italienisch
-10.6.22;ME;Cedi;House of Mezze;Uster;libanesisch
-8.7.22;ME;Moe;Kokoro;Zürich;japanisch
-12.8.22;ME;Raphi;Luigia;Zürich;italienisch
-9.9.22;Ausf.;n/a;n/a;n/a;n/a
-1.10.22;VA;Andy;Zur Werkstatt;St. Gallen;schweizerisch
-14.10.22;ME;Marco;La Cote;Zürich;französisch
-11.11.22;ME;Kevin;The Butcher;Uster;amerikanisch
-9.12.22;ME;Andy;Texas Steakhouse;Zürich;amerikanisch
-13.1.23;ME;Kevin;Zeughauskeller;Zürich;schweizerisch
-10.2.23;ME;Ramon;Mc Roland;Kaltbrunn;amerikanisch
-10.3.23;ME;Marco;Lieferservice;Volketswil;n/a
-14.4.23;ME;Andy;The Caribean;Zürich;karibisch
-12.5.23;ME;Röme;Habesha;Zürich;äthiopisch
-9.6.23;ME;Thomi;El Luchadores;Zürich;mexikanisch
-14.7.23;ME;Raphi;Achi Restaurant;Zürich;chinesisch
-11.8.23;ME;Dave;La Esquina;Wallisellen;spanisch
-8.9.23;ME;Cedi;Nihao;Zürich;asiatisch
-7.10.23;VA;Andy;Grottino 1313 (VA);Luzern;italienisch
-13.10.23;ME;Andy;Tasty Döner;Uster;türkisch
-10.11.23;ME;Fabio;Brunnentor Schnitzelbaron;Uster;österreichisch
-8.12.23;ME;Moe;Ciao;Zürich;italienisch
-12.1.24;ME;Ramon;;;
-9.2.24;ME;Marco;;;
-8.3.24;GV;Marco;Lieferservice;;
-12.4.24;ME;Raphi;;;
-10.5.24;ME;Thomi;;;
-14.6.24;ME;Röme;;;
-12.7.24;ME;Dave;;;
-9.8.24;ME;Cedi;;;
-13.9.24;ME;Andy;;;
-11.10.24;ME;Kevin;;;
-8.11.24;ME;Fabio;;;
-13.12.24;ME;Moe;;;
-10.1.25;ME;Ramon;;;
-14.2.25;ME;Marco;;;
-14.3.25;GV;Marco;Lieferservice;;
-11.4.25;ME;Raphi;;;
-9.5.25;ME;Thomi;;;
-13.6.25;ME;Röme;;;
-11.7.25;ME;Dave;;;
-8.8.25;ME;Cedi;;;
-12.9.25;ME;Andy;;;
-10.10.25;ME;Kevin;;;
-14.11.25;ME;Fabio;;;
-12.12.25;ME;Moe;;;
+2022-01-14;ME;Röme;Lieferservice;Volketswil;n/a
+2022-02-11;ME;Kevin;Nooba;Zürich;asiatisch
+2022-03-11;GV;Marco;Lieferservice;Volketswil;n/a
+2022-04-08;ME;Dave;Johaniter;Zürich;schweizerisch
+2022-05-13;ME;Marco;Pinochchio;Dübendorf;italienisch
+2022-06-10;ME;Cedi;House of Mezze;Uster;libanesisch
+2022-07-08;ME;Moe;Kokoro;Zürich;japanisch
+2022-08-12;ME;Raphi;Luigia;Zürich;italienisch
+2022-09-09;Ausf.;n/a;n/a;n/a;n/a
+2022-10-01;VA;Andy;Zur Werkstatt;St. Gallen;schweizerisch
+2022-10-14;ME;Marco;La Cote;Zürich;französisch
+2022-11-11;ME;Kevin;The Butcher;Uster;amerikanisch
+2022-12-09;ME;Andy;Texas Steakhouse;Zürich;amerikanisch
+2023-01-13;ME;Kevin;Zeughauskeller;Zürich;schweizerisch
+2023-02-10;ME;Ramon;Mc Roland;Kaltbrunn;amerikanisch
+2023-03-10;ME;Marco;Lieferservice;Volketswil;n/a
+2023-04-14;ME;Andy;The Caribean;Zürich;karibisch
+2023-05-12;ME;Röme;Habesha;Zürich;äthiopisch
+2023-06-09;ME;Thomi;El Luchadores;Zürich;mexikanisch
+2023-07-14;ME;Raphi;Achi Restaurant;Zürich;chinesisch
+2023-08-11;ME;Dave;La Esquina;Wallisellen;spanisch
+2023-09-08;ME;Cedi;Nihao;Zürich;asiatisch
+2023-10-07;VA;Andy;Grottino 1313 (VA);Luzern;italienisch
+2023-10-13;ME;Andy;Tasty Döner;Uster;türkisch
+2023-11-10;ME;Fabio;Brunnentor Schnitzelbaron;Uster;österreichisch
+2023-12-08;ME;Moe;Ciao;Zürich;italienisch
+2024-01-12;ME;Ramon;;;
+2024-02-09;ME;Marco;;;
+2024-03-08;GV;Marco;Lieferservice;;
+2024-04-12;ME;Raphi;;;
+2024-05-10;ME;Thomi;;;
+2024-06-14;ME;Röme;;;
+2024-07-12;ME;Dave;;;
+2024-08-09;ME;Cedi;;;
+2024-09-13;ME;Andy;;;
+2024-10-11;ME;Kevin;;;
+2024-11-08;ME;Fabio;;;
+2024-12-13;ME;Moe;;;
+2025-01-10;ME;Ramon;;;
+2025-02-14;ME;Marco;;;
+2025-03-14;GV;Marco;Lieferservice;;
+2025-04-11;ME;Raphi;;;
+2025-05-09;ME;Thomi;;;
+2025-06-13;ME;Röme;;;
+2025-07-11;ME;Dave;;;
+2025-08-08;ME;Cedi;;;
+2025-09-12;ME;Andy;;;
+2025-10-10;ME;Kevin;;;
+2025-11-14;ME;Fabio;;;
+2025-12-12;ME;Moe;;;
