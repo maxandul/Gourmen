@@ -7,7 +7,11 @@ dunkelgrau: #3D3D3D
 gold: #947F57
 */
 
-
+html, body {
+    height: 100%; /* Stellt sicher, dass der HTML- und BODY-Tag die volle Bildschirmhöhe einnehmen */
+    display: flex;
+    flex-direction: column; /* Ordnet Elemente in einer Spalte an */
+}
 
 .kopfzeile {
     position: fixed;
@@ -34,6 +38,7 @@ gold: #947F57
 
 .inhalt{
     padding-top: 100px;
+    flex: 1; /* Nimmt den verfügbaren Platz ein, so dass der Footer unten bleibt */
 }
 
 .hamburger{
@@ -131,7 +136,7 @@ p {
 
 .legende {
     font-size: 10pt;
-    color: #FFFFFF;
+    color: #B9C2C4;
     margin-left: 15px;
 }
 
@@ -268,3 +273,12 @@ p {
     padding: 8px; /* Innenabstand der Zellen */
     text-align: left; /* Textausrichtung */
 }
+
+.footer {
+    background-color: #3D3D3D; /* Hintergrundfarbe der Fußzeile */
+    color: #B9C2C4;
+    font-size: 10pt;
+    text-align: center; /* Zentriert den Text in der Fußzeile */
+    padding: 10px 0; /* Polsterung oben und unten */
+}
+
