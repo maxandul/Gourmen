@@ -83,7 +83,7 @@ html, body {
     min-height: 100vh;
     display: block;
     z-index: 98;
-    background-color: #3D3D3D;
+    background-color: #B9C2C4;
     padding-top: 120px;
     transition: 0.4s;
 
@@ -100,14 +100,14 @@ html, body {
         margin: 0 auto 16px;
         text-align: center; 
         padding: 12px 16px;
-        background-color: #6D6D6D;
+        background-color: #000000;
 
         color: #FFFFFF;
         text-decoration: none;
 }
 
 .mobile-nav a:hover {
-    color: #B9C2C4;
+    color: #6D6D6D;
 }
 
 /* Body */
