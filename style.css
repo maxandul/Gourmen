@@ -184,7 +184,7 @@ p {
     border: none; /* Kein Rand */
     border-radius: 10px; /* Abgerundete Ecken */
     padding: 10px 15px; /* Innenabstand */
-    margin: 30px; /* Außenabstand */
+    margin: 10px; /* Außenabstand */
     box-shadow: 1px 1px 4px #FFFFFF; /* Schatten */
     font-family: 'Open Sans', sans-serif; /* Schriftart */
     font-size: 14pt; /* Größere Schriftgröße */
