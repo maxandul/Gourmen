@@ -14,7 +14,7 @@ gold: #947F57
     top: 0;
     left: 0;
     right: 0;
-    background-color: #3D3D3D; /* Hintergrundfarbe des Blocks */
+    background-color: #947F57; /* Hintergrundfarbe des Blocks */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,7 +107,7 @@ gold: #947F57
 /* Body */
 
 body {
-    background-color: #6D6D6D;
+    background-color: #3D3D3D;
     font-family: 'Open Sans', sans-serif;
     font-size: 16pt;
 }
@@ -175,7 +175,7 @@ p {
 
 .button {
     color: #FFFFFF; /* Textfarbe */
-    background-color: #3D3D3D; /* Hintergrundfarbe */
+    background-color: #947F57; /* Hintergrundfarbe */
     border: none; /* Kein Rand */
     border-radius: 10px; /* Abgerundete Ecken */
     padding: 10px 15px; /* Innenabstand */
@@ -194,7 +194,7 @@ p {
 
 .ergebnisse{
     color: #3D3D3D;
-    background-color: #B9C2C4;
+    background-color: #E8E8E8;
     font-size: 16pt;
     padding: 5px;
     margin: 5px;
@@ -204,7 +204,7 @@ p {
     
 .ergebnisse p {
     color: #3D3D3D;
-    background-color: #B9C2C4;
+    background-color: #E8E8E8;
     font-size: 16pt;
     margin: 5px;
     left: 32px;
@@ -249,7 +249,7 @@ p {
     right: 15px; /* Kleiner Rand rechts */
     font-family: 'Open Sans', sans-serif; /* Schriftart */
     color: #3D3D3D; /* Textfarbe */
-    background-color: #B9C2C4; /* Hintergrundfarbe */
+    background-color: #E8E8E8; /* Hintergrundfarbe */
     box-shadow: 1px 1px 6px #3D3D3D; /* Schatten */
     padding: 5px; /* Innenabstand */
     overflow-x: auto; /* Scrollbar für horizontales Scrollen */
