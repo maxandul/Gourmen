@@ -1,4 +1,5 @@
 /* 
+schwarz: #000000
 weiss: #FFFFFF
 silber: #B9C2C4
 grau: #6D6D6D
@@ -82,7 +83,7 @@ html, body {
     min-height: 100vh;
     display: block;
     z-index: 98;
-    background-color: #000000;
+    background-color: #3D3D3D;
     padding-top: 120px;
     transition: 0.4s;
 
@@ -99,7 +100,7 @@ html, body {
         margin: 0 auto 16px;
         text-align: center; 
         padding: 12px 16px;
-        background-color: #3D3D3D;
+        background-color: #6D6D6D;
 
         color: #FFFFFF;
         text-decoration: none;
@@ -112,7 +113,7 @@ html, body {
 /* Body */
 
 body {
-    background-color: #3D3D3D;
+    background-color: #000000;
     font-family: 'Open Sans', sans-serif;
     font-size: 16pt;
 }
@@ -184,7 +185,7 @@ p {
     border-radius: 10px; /* Abgerundete Ecken */
     padding: 10px 15px; /* Innenabstand */
     margin: 30px; /* Außenabstand */
-    box-shadow: 1px 1px 4px #E8E8E8; /* Schatten */
+    box-shadow: 1px 1px 4px #FFFFFF; /* Schatten */
     font-family: 'Open Sans', sans-serif; /* Schriftart */
     font-size: 14pt; /* Größere Schriftgröße */
     cursor: pointer; /* Cursor-Stil */
@@ -275,8 +276,8 @@ p {
 }
 
 .footer {
-    background-color: #3D3D3D; /* Hintergrundfarbe der Fußzeile */
-    color: #B9C2C4;
+    background-color: #000; /* Hintergrundfarbe der Fußzeile */
+    color: #947F57;
     font-size: 10pt;
     text-align: center; /* Zentriert den Text in der Fußzeile */
     padding: 10px 0; /* Polsterung oben und unten */
