@@ -37,8 +37,9 @@
         <h1>Comming soon...</h1><br>
         <canvas id="kuechenDiagramm"></canvas>
         <script>
+            // Funktion zum Laden und Parsen der CSV-Daten
             function ladeUndVerarbeiteKuechenDaten() {
-                fetch('https://maxandul.github.io/Gourmen/data/agenda.csv')
+                fetch('https://maxandul.github.io/Gourmen/data/stats.csv') // Pfad zu Ihrer stats.csv-Datei
                     .then(response => response.text())
                     .then(text => {
                         const { kuecheStats, kuecheSumme } = parseCSVFuerDiagramm(text);
@@ -47,6 +48,7 @@
                     .catch(error => console.error('Fehler beim Laden der CSV:', error));
             }
 
+            // Funktion zum Parsen der CSV und Vorbereiten der Daten für das Diagramm
             function parseCSVFuerDiagramm(csvText) {
                 const lines = csvText.split('\n');
                 const kuecheStats = [];
@@ -55,29 +57,30 @@
                 // Die Schleife beginnt bei 1, um die Kopfzeile zu überspringen
                 for (let i = 1; i < lines.length; i++) {
                     const columns = lines[i].split(';');
-                    kuecheStats.push(columns[9]); // küche_stats ist die zehnte Spalte
-                    kuecheSumme.push(parseInt(columns[10], 10)); // küche_summe ist die elfte Spalte
+                    kuecheStats.push(columns[0].trim()); // küche_stats ist die erste Spalte
+                    kuecheSumme.push(parseInt(columns[1].trim(), 10)); // küche_summe ist die zweite Spalte
                 }
 
                 return { kuecheStats, kuecheSumme };
             }
 
+            // Funktion zum Erstellen des Balkendiagramms
             function erstelleBalkendiagramm(kuecheStats, kuecheSumme) {
                 const context = document.getElementById('kuechenDiagramm').getContext('2d');
                 new Chart(context, {
-                    type: 'bar',
+                    type: 'bar', // Balkendiagramm
                     data: {
-                        labels: kuecheStats,
+                        labels: kuecheStats, // Kochstile
                         datasets: [{
                             label: 'Häufigkeit der Küchenstile',
-                            data: kuecheSumme,
+                            data: kuecheSumme, // Anzahl der Erwähnungen
                             backgroundColor: 'rgba(0, 123, 255, 0.5)',
                             borderColor: 'rgba(0, 123, 255, 1)',
                             borderWidth: 1
                         }]
                     },
                     options: {
-                        indexAxis: 'y',
+                        indexAxis: 'y', // Stellt das Balkendiagramm auf horizontal
                         scales: {
                             x: {
                                 beginAtZero: true
@@ -86,9 +89,8 @@
                     }
                 });
             }
-            console.log(kuecheStats, kuecheSumme);
-            ladeUndVerarbeiteKuechenDaten();
 
+            ladeUndVerarbeiteKuechenDaten();
         </script>
         
         
