@@ -162,7 +162,7 @@ p {
 }
 
 .rechner-zeile .input-rechner, .rechner-zeile select {
-    width: 20%;
+    width: 50%;
     margin-right: 15px;
 }
 
