@@ -1,51 +1,51 @@
-﻿Datum;Anlass;Verantwortlich;Restaurant;Ort;Küche;Total;Gruppe;Durchschnitt
-2022-01-14;ME;Röme;Lieferservice;Volketswil;n/a;;;
-2022-02-11;ME;Kevin;Nooba;Zürich;asiatisch;;;
-2022-03-11;GV;Marco;Lieferservice;Volketswil;n/a;;;
-2022-04-08;ME;Dave;Johaniter;Zürich;schweizerisch;;;
-2022-05-13;ME;Marco;Pinochchio;Dübendorf;italienisch;;;
-2022-06-10;ME;Cedi;House of Mezze;Uster;libanesisch;;;
-2022-07-08;ME;Moe;Kokoro;Zürich;japanisch;;;
-2022-08-12;ME;Raphi;Luigia;Zürich;italienisch;;;
-2022-09-09;Ausf.;n/a;n/a;n/a;n/a;;;
-2022-10-01;VA;Andy;Zur Werkstatt;St. Gallen;schweizerisch;;;
-2022-10-14;ME;Marco;La Cote;Zürich;französisch;;;
-2022-11-11;ME;Kevin;The Butcher;Uster;amerikanisch;;;
-2022-12-09;ME;Andy;Texas Steakhouse;Zürich;amerikanisch;;;
-2023-01-13;ME;Kevin;Zeughauskeller;Zürich;schweizerisch;;;
-2023-02-10;ME;Ramon;Mc Roland;Kaltbrunn;amerikanisch;;;
-2023-03-10;ME;Marco;Lieferservice;Volketswil;n/a;;;
-2023-04-14;ME;Andy;The Caribean;Zürich;karibisch;;;
-2023-05-12;ME;Röme;Habesha;Zürich;äthiopisch;;;
-2023-06-09;ME;Thomi;El Luchadores;Zürich;mexikanisch;;;
-2023-07-14;ME;Raphi;Achi Restaurant;Zürich;chinesisch;;;
-2023-08-11;ME;Dave;La Esquina;Wallisellen;spanisch;;;
-2023-09-08;ME;Cedi;Nihao;Zürich;asiatisch;;;
-2023-10-07;VA;Andy;Grottino 1313 (VA);Luzern;italienisch;;;
-2023-10-13;ME;Andy;Tasty Döner;Uster;türkisch;;;
-2023-11-10;ME;Fabio;Brunnentor Schnitzelbaron;Uster;österreichisch;;;
-2023-12-08;ME;Moe;Ciao;Zürich;italienisch;;;
-2024-01-12;ME;Ramon;;;;;;
-2024-02-09;ME;Marco;;;;;;
-2024-03-08;GV;Marco;Lieferservice;;;;;
-2024-04-12;ME;Raphi;;;;;;
-2024-05-10;ME;Thomi;;;;;;
-2024-06-14;ME;Röme;;;;;;
-2024-07-12;ME;Dave;;;;;;
-2024-08-09;ME;Cedi;;;;;;
-2024-09-13;ME;Andy;;;;;;
-2024-10-11;ME;Kevin;;;;;;
-2024-11-08;ME;Fabio;;;;;;
-2024-12-13;ME;Moe;;;;;;
-2025-01-10;ME;Ramon;;;;;;
-2025-02-14;ME;Marco;;;;;;
-2025-03-14;GV;Marco;Lieferservice;;;;;
-2025-04-11;ME;Raphi;;;;;;
-2025-05-09;ME;Thomi;;;;;;
-2025-06-13;ME;Röme;;;;;;
-2025-07-11;ME;Dave;;;;;;
-2025-08-08;ME;Cedi;;;;;;
-2025-09-12;ME;Andy;;;;;;
-2025-10-10;ME;Kevin;;;;;;
-2025-11-14;ME;Fabio;;;;;;
-2025-12-12;ME;Moe;;;;;;
+﻿Datum;Anlass;Verantwortlich;Restaurant;Ort;Küche;Total;Gruppe;Durchschnitt;küche_stats;küche_summe
+14.01.2022;ME;Roman;Lieferservice;Volketswil;n/a;;;;italienisch;4
+11.02.2022;ME;Kevin;Nooba;Zürich;asiatisch;;;;amerikanisch;3
+11.03.2022;GV;Marco;Lieferservice;Volketswil;n/a;;;;schweizerisch;3
+08.04.2022;ME;Dave;Johaniter;Zürich;schweizerisch;;;;asiatisch;2
+13.05.2022;ME;Marco;Pinochchio;Dübendorf;italienisch;;;;äthiopisch;1
+10.06.2022;ME;Cedi;House of Mezze;Uster;libanesisch;;;;chinesisch;1
+08.07.2022;ME;Moe;Kokoro;Zürich;japanisch;;;;französisch;1
+12.08.2022;ME;Raphi;Luigia;Zürich;italienisch;;;;japanisch;1
+09.09.2022;Ausf.;n/a;n/a;n/a;n/a;;;;karibisch;1
+01.10.2022;VA;Andy;Zur Werkstatt;St. Gallen;schweizerisch;;;;libanesisch;1
+14.10.2022;ME;Marco;La Cote;Zürich;französisch;;;;mexikanisch;1
+11.11.2022;ME;Kevin;The Butcher;Uster;amerikanisch;;;;österreichisch;1
+09.12.2022;ME;Andy;Texas Steakhouse;Zürich;amerikanisch;;;;spanisch;1
+13.01.2023;ME;Kevin;Zeughauskeller;Zürich;schweizerisch;;;;türkisch;1
+10.02.2023;ME;Ramon;Mc Roland;Kaltbrunn;amerikanisch;;;;;
+10.03.2023;ME;Marco;Lieferservice;Volketswil;n/a;;;;;
+14.04.2023;ME;Andy;The Caribean;Zürich;karibisch;;;;;
+12.05.2023;ME;Roman;Habesha;Zürich;äthiopisch;;;;;
+09.06.2023;ME;Thomi;El Luchadores;Zürich;mexikanisch;;;;;
+14.07.2023;ME;Raphi;Achi Restaurant;Zürich;chinesisch;;;;;
+11.08.2023;ME;Dave;La Esquina;Wallisellen;spanisch;;;;;
+08.09.2023;ME;Cedi;Nihao;Zürich;asiatisch;;;;;
+07.10.2023;VA;Andy;Grottino 1313 (VA);Luzern;italienisch;;;;;
+13.10.2023;ME;Andy;Tasty Döner;Uster;türkisch;;;;;
+10.11.2023;ME;Fabio;Brunnentor Schnitzelbaron;Uster;österreichisch;;;;;
+08.12.2023;ME;Moe;Ciao;Zürich;italienisch;;;;;
+12.01.2024;ME;Ramon;;;;;;;;
+09.02.2024;ME;Marco;;;;;;;;
+08.03.2024;GV;Marco;Lieferservice;;;;;;;
+12.04.2024;ME;Raphi;;;;;;;;
+10.05.2024;ME;Thomi;;;;;;;;
+14.06.2024;ME;Roman;;;;;;;;
+12.07.2024;ME;Dave;;;;;;;;
+09.08.2024;ME;Cedi;;;;;;;;
+13.09.2024;ME;Andy;;;;;;;;
+11.10.2024;ME;Kevin;;;;;;;;
+08.11.2024;ME;Fabio;;;;;;;;
+13.12.2024;ME;Moe;;;;;;;;
+10.01.2025;ME;Ramon;;;;;;;;
+14.02.2025;ME;Marco;;;;;;;;
+14.03.2025;GV;Marco;Lieferservice;;;;;;;
+11.04.2025;ME;Raphi;;;;;;;;
+09.05.2025;ME;Thomi;;;;;;;;
+13.06.2025;ME;Roman;;;;;;;;
+11.07.2025;ME;Dave;;;;;;;;
+08.08.2025;ME;Cedi;;;;;;;;
+12.09.2025;ME;Andy;;;;;;;;
+10.10.2025;ME;Kevin;;;;;;;;
+14.11.2025;ME;Fabio;;;;;;;;
+12.12.2025;ME;Moe;;;;;;;;
