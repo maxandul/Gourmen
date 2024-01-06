@@ -94,7 +94,8 @@ html, body {
 }
 
 .mobile-nav a {
-        display: block; 
+        display: block;
+        font-size: 16pt; 
         width: 100%;
         max-width: 200px;
         margin: 0 auto 16px;
@@ -115,24 +116,38 @@ html, body {
 body {
     background-color: #000000;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16pt;
+    font-size: 10pt;
 }
 
 h1 {
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
-    font-size: 38pt;
+    font-size: 34pt;
     margin-left: 35px;
 }
 
 h2 {
     font-family: 'Roboto', sans-serif;
+    color: #947F57;
+    font-size: 24pt;
+    margin-left: 5px;
 }
 
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-left: 5px;
+}
 
 p {
     font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
     color: #FFFFFF;
+    margin-left: 5px;
+    display: block;
+    text-align: justify;
 }
 
 .legende {
@@ -262,7 +277,14 @@ p {
 }
 
 /* Stil für Tabellen */
-.agendaTabelle table, .naechsteTermine table {
+.agendaTabelle table {
+    border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellgrenzen */
+    width: 100%; /* Volle Breite */
+    font-size: 10pt; /* Schriftgröße */
+    border: none;
+}
+
+.naechsteTermine table {
     border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellgrenzen */
     width: 100%; /* Volle Breite */
     font-size: 12pt; /* Schriftgröße */
