@@ -145,10 +145,11 @@ p {
     font-family: 'Open Sans', sans-serif;
     font-size: 12pt;
     color: #FFFFFF;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: block;
     text-align: justify;
+    hyphens: auto;
 }
 
 .legende {
