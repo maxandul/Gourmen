@@ -272,7 +272,8 @@ p {
     font-family: 'Open Sans', sans-serif;
     color: #FFFFFF;
     background-color: none;
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     overflow-x: auto;
 }
 
@@ -289,33 +290,38 @@ p {
 .agendaTabelle th, .agendaTabelle td, 
 .naechsteTermine th, .naechsteTermine td {
     border: none;
-    padding: 5px;
+    padding: 2px;
     text-align: left;
 }
 
-/* Farbe für Tabellenköpfe */
+/* Stil für Kopfzeilen-Zellen (th) */
 .agendaTabelle th, .naechsteTermine th {
-    color: #947F57;
-    font-size: 12pt;
-    font-weight: bold;
-    padding-bottom: 10pt;
+    background-color: transparent; /* Keine Hintergrundfarbe für Kopfzeilen-Zellen */
+    color: #947F57; /* Farbe für den Text in Kopfzeilen-Zellen */
+    font-size: 12pt; /* Schriftgröße */
+    padding-bottom: 5pt;
 }
 
-/* Hintergrundfarbe für jede zweite Zeile */
-.agendaTabelle tr:nth-child(even), .naechsteTermine tr:nth-child(even) {
-    background-color: #B9C2C4;
-    color: #000000;
+/* Stil für alle Tabellenzeilen-Zellen (td) */
+.agendaTabelle td, .naechsteTermine td {
+    background-color: #3D3D3D; /* Hintergrundfarbe für normale Zeilen */
+    padding: 5px; /* Innenabstand */
+    text-align: left; /* Textausrichtung */
 }
 
-/* Abgerundete Ecken für erste und letzte Zelle jeder Zeile */
-.agendaTabelle tr:nth-child(even) td:first-child, .naechsteTermine tr:nth-child(even) td:first-child {
+/* Stil für jede zweite Zeile */
+.agendaTabelle tr:nth-child(even) td, .naechsteTermine tr:nth-child(even) td {
+    background-color: #E8E8E8; /* Halbtransparentes Weiß für jede zweite Zeile */
+    color:#3D3D3D;
+}
+
+/* Abgerundete Ecken für die erste und letzte Zelle jeder Zeile */
+.agendaTabelle td:first-child, .naechsteTermine td:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-
-
-.agendaTabelle tr:nth-child(even) td:last-child, .naechsteTermine tr:nth-child(even) td:last-child {
+.agendaTabelle td:last-child, .naechsteTermine td:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
