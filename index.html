@@ -95,10 +95,10 @@
                 const naechsteTermine = zukuenftigeTermine.slice(0, 3);
     
                 // Tabelle erstellen
-                let tabelle = "<table border='1'><tr><th>Datum</th><th>Anlass</th><th>Verantwortlich</th></tr>";
+                let tabelle = "<table border='1'><tr><th>Datum</th><th>Anlass</th><th>Lead</th></tr>";
                 naechsteTermine.forEach(termin => {
                     const formatiertesDatum = formatiereDatum(termin.Datum);
-                    tabelle += `<tr><td>${formatiertesDatum}</td><td>${termin.Anlass}</td><td>${termin.Verantwortlich}</td></tr>`;
+                    tabelle += `<tr><td>${formatiertesDatum}</td><td>${termin.Anlass}</td><td>${termin.Lead}</td></tr>`;
                 });
                 tabelle += "</table>";
     

@@ -271,9 +271,8 @@ p {
     left: 15px; /* Kleiner Rand links */
     right: 15px; /* Kleiner Rand rechts */
     font-family: 'Open Sans', sans-serif; /* Schriftart */
-    color: #3D3D3D; /* Textfarbe */
-    background-color: #E8E8E8; /* Hintergrundfarbe */
-    box-shadow: 1px 1px 6px #3D3D3D; /* Schatten */
+    color: #FFFFFF; /* Textfarbe */
+    background-color: none; /* Hintergrundfarbe */
     padding: 5px; /* Innenabstand */
     overflow-x: auto; /* Scrollbar für horizontales Scrollen */
 }

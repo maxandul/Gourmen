@@ -82,7 +82,7 @@
     
             function zeigeTabelle(data) {
                 let tabelle = "<table border='1'>";
-                    tabelle += "<tr><th>Datum</th><th>Anlass</th><th>Verantwortlich</th><th>Restaurant</th></tr>";
+                    tabelle += "<tr><th>Datum</th><th>Anlass</th><th>Lead</th><th>Restaurant</th></tr>";
 
 
                     data.forEach(function(row) {
@@ -90,7 +90,7 @@
                         tabelle += "<tr>";
                         tabelle += "<td>" + formatiertesDatum + "</td>"; 
                         tabelle += "<td>" + row["Anlass"] + "</td>";
-                        tabelle += "<td>" + row["Verantwortlich"] + "</td>";
+                        tabelle += "<td>" + row["Lead"] + "</td>";
                         tabelle += "<td>" + row["Restaurant"] + "</td>";
                         tabelle += "</tr>";
                     });
