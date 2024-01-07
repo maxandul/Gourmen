@@ -162,13 +162,13 @@ p {
 
 .rechner{
     color: #FFFFFF;
-    font-size: 16pt;
+    font-size: 12pt;
     left: 32px;
 }
 
 
 .input-rechner {
-        font-size: 16pt; 
+        font-size: 12pt; 
         padding: 5px; 
     }
 
@@ -205,7 +205,7 @@ p {
     margin-bottom: 30px;
     box-shadow: 1px 1px 4px #FFFFFF; /* Schatten */
     font-family: 'Open Sans', sans-serif; /* Schriftart */
-    font-size: 14pt; /* Größere Schriftgröße */
+    font-size: 12pt; /* Größere Schriftgröße */
     cursor: pointer; /* Cursor-Stil */
     transition: background-color 0.3s; /* Sanfter Übergang für Hintergrundfarbe */
 }
@@ -218,7 +218,7 @@ p {
 .ergebnisse{
     color: #3D3D3D;
     background-color: #E8E8E8;
-    font-size: 16pt;
+    font-size: 12pt;
     padding: 5px;
     margin: 5px;
     box-shadow: 1px 1px 6px #3D3D3D;
