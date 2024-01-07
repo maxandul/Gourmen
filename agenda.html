@@ -83,9 +83,9 @@
             function zeigeTabelle(data) {
                 let tabelle = "<table border='1'>";
                     tabelle += "<tr><th>Datum</th><th>Anlass</th><th>Lead</th><th>Restaurant</th></tr>";
-
-
+                
                     data.forEach(function(row) {
+                        if (!row["Datum"] || row["Datum"].trim() === "") return; // Überspringt Zeilen ohne gültiges Datum
                         const formatiertesDatum = formatiereDatum(row["Datum"]);
                         tabelle += "<tr>";
                         tabelle += "<td>" + formatiertesDatum + "</td>"; 
