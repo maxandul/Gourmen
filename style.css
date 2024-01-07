@@ -180,7 +180,7 @@ p {
 
 .rechner-zeile label {
     text-align: left;
-    flex-basis: 65%; /* Stellt die Breite des Labels ein */
+    flex-basis: 50%; /* Stellt die Breite des Labels ein */
     padding-left: 15px;
 }
 
