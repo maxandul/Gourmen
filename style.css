@@ -305,7 +305,8 @@ p {
 }
 
 .agendaTabelle tr:nth-child(even), .naechsteTermine tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.2); /* Halbtransparentes Weiß */
+    background-color: rgba(255, 255, 255, 0.5); /* Halbtransparentes Weiß */
+    color: #000000;
 }
 
 
@@ -319,6 +320,12 @@ p {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+.agendaTabelle th:last-child, .agendaTabelle td:last-child, 
+.naechsteTermine th:last-child, .naechsteTermine td:last-child {
+    text-align: right;
+}
+
 
 .footer {
     background-color: #000; /* Hintergrundfarbe der Fußzeile */
