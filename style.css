@@ -154,7 +154,7 @@ p {
 
 .legende {
     font-size: 8pt;
-    color: #B9C2C4;
+    color: #FFFFFF;
     margin-left: 5px;
 }
 
@@ -295,8 +295,13 @@ p {
 .agendaTabelle th, .agendaTabelle td, 
 .naechsteTermine th, .naechsteTermine td {
     border: none; /* Rand der Zellen */
-    padding: 8px; /* Innenabstand der Zellen */
+    padding: 5px; /* Innenabstand der Zellen */
     text-align: left; /* Textausrichtung */
+}
+
+.agendaTabelle th, .naechsteTermine th {
+    color: #947F57;
+    font-size: 12pt;
 }
 
 .footer {
