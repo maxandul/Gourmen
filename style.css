@@ -185,7 +185,7 @@ p {
 }
 
 .rechner-zeile .input-rechner, .rechner-zeile select {
-    width: 50%;
+    width: 30%;
     margin-right: 15px;
 }
 
@@ -307,7 +307,7 @@ p {
     background-color: #3D3D3D; /* Hintergrundfarbe für normale Zeilen */
     padding: 5px; /* Innenabstand */
     text-align: left; /* Textausrichtung */
-    color:#B9C2C4
+    color: #9d9d9d;
 }
 
 /* Stil für jede zweite Zeile */
