@@ -266,64 +266,67 @@ p {
     margin-right: 15px;
 }
 
-/* Allgemeiner Stil für Tabellen-Container */
+/* Stil für Tabellen-Container */
 .agendaTabelle, .naechsteTermine {
-    left: 15px; /* Kleiner Rand links */
-    right: 15px; /* Kleiner Rand rechts */
-    font-family: 'Open Sans', sans-serif; /* Schriftart */
-    color: #FFFFFF; /* Textfarbe */
-    background-color: none; /* Hintergrundfarbe */
-    padding: 5px; /* Innenabstand */
-    overflow-x: auto; /* Scrollbar für horizontales Scrollen */
+    margin: 0 5px; /* 10px Abstand links und rechts */
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF;
+    background-color: none;
+    padding: 5px;
+    overflow-x: auto;
 }
 
 /* Stil für Tabellen */
-.agendaTabelle table {
-    border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellgrenzen */
-    width: 100%; /* Volle Breite */
-    font-size: 10pt; /* Schriftgröße */
+.agendaTabelle table, .naechsteTermine table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed; /* Gleichmäßige Verteilung der Spaltenbreiten */
+    font-size: 10pt;
     border: none;
 }
 
-.naechsteTermine table {
-    border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellgrenzen */
-    width: 100%; /* Volle Breite */
-    font-size: 12pt; /* Schriftgröße */
-    border: none;
-}
-
+/* Stile für Zellen */
 .agendaTabelle th, .agendaTabelle td, 
 .naechsteTermine th, .naechsteTermine td {
-    border: none; /* Rand der Zellen */
-    padding: 5px; /* Innenabstand der Zellen */
-    text-align: left; /* Textausrichtung */
+    border: none;
+    padding: 5px;
+    text-align: left;
 }
 
+/* Farbe für Tabellenköpfe */
 .agendaTabelle th, .naechsteTermine th {
     color: #947F57;
     font-size: 12pt;
 }
 
+/* Hintergrundfarbe für jede zweite Zeile */
 .agendaTabelle tr:nth-child(even), .naechsteTermine tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.5); /* Halbtransparentes Weiß */
+    background-color: rgba(255, 255, 255, 0.5);
     color: #000000;
 }
 
-
+/* Abgerundete Ecken für erste und letzte Zelle jeder Zeile */
 .agendaTabelle tr:nth-child(even) td:first-child, .naechsteTermine tr:nth-child(even) td:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-
 
 .agendaTabelle tr:nth-child(even) td:last-child, .naechsteTermine tr:nth-child(even) td:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
+/* Erste Zelle jeder Zeile */
+.agendaTabelle th:first-child, .agendaTabelle td:first-child, 
+.naechsteTermine th:first-child, .naechsteTermine td:first-child {
+    padding-left: 10px; /* Abstand von links */
+}
+
+/* Rechtsbündige Ausrichtung für letzte Spalte */
 .agendaTabelle th:last-child, .agendaTabelle td:last-child, 
 .naechsteTermine th:last-child, .naechsteTermine td:last-child {
     text-align: right;
+    padding-right: 10px;
 }
 
 
