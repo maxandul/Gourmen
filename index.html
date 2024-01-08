@@ -43,7 +43,7 @@
 
     <div class="inhalt">
         <h1>Cheers!</h1>
-        <p>Willkommen auf Homepage der Gourmen. Schön, dass du da bist!</p>
+        <p>Willkommen auf Homepage der Gourmen. <br> Schön, dass du da bist!</p>
         <br>
         <h2>Upcoming Events</h2>
         <p>Checke regelmässig die kommenden Events. So verpasst du bestimmt keine Termine und keine Pflichten:</p>
@@ -103,7 +103,7 @@
                 const naechsteTermine = zukuenftigeTermine.slice(0, 3);
     
                 // Tabelle erstellen
-                let tabelle = "<table border='1'><tr><th>Datum</th><th>Anlass</th><th>Lead</th></tr>";
+                let tabelle = "<table border='1'><tr><th>Datum</th><th>Event</th><th>Lead</th></tr>";
                 naechsteTermine.forEach(termin => {
                     const formatiertesDatum = formatiereDatum(termin.Datum);
                     tabelle += `<tr><td>${formatiertesDatum}</td><td>${termin.Anlass}</td><td>${termin.Lead}</td></tr>`;
@@ -122,7 +122,7 @@
         <br>
         <h2>Latest News</h2>
         <h3>8. Dezember 2023</h3>
-        <p>Wahnsinns Essen im Chianalea! Mit CHF 170.- pro Vielfrass vermutlich bisweil das teuerste Essen, aber zu Weihnachten kann man sich ja gönnen :) Top Location - Danke Moe!  </p>
+        <p>Wahnsinns Essen im Chianalea! Mit CHF 170.- pro Vielfrass vermutlich bisweil das teuerste Essen, aber zu Weihnachten kann man sich ja gönnen :) Top Location - Danke Mo!  </p>
         <h3>22. November 2023</h3>
         <p>Nach einer üppigen Völlerei im Schnitzelbaron gilt das Aufnahmeritual als mit Bravour bestanden! Wir begrüssen herzlich Fabio als unser jüngstes Mitglied - schön, dich dabei zu haben!</p>
     </div>
