@@ -282,7 +282,7 @@ p {
     border-collapse: collapse;
     width: 100%;
     max-width: 100%;
-    table-layout: auto; /* Gleichmäßige Verteilung der Spaltenbreiten */
+    table-layout: auto; 
     font-size: 10pt;
     border: none;
 }
@@ -293,6 +293,7 @@ p {
     border: none;
     padding: 2px;
     text-align: left;
+    word-wrap: break-word;
 }
 
 /* Stil für Kopfzeilen-Zellen (th) */
