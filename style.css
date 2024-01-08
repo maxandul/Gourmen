@@ -281,7 +281,8 @@ p {
 .agendaTabelle table, .naechsteTermine table {
     border-collapse: collapse;
     width: 100%;
-    table-layout: fixed; /* Gleichmäßige Verteilung der Spaltenbreiten */
+    max-width: 100%;
+    table-layout: auto; /* Gleichmäßige Verteilung der Spaltenbreiten */
     font-size: 10pt;
     border: none;
 }
@@ -300,12 +301,14 @@ p {
     color: #947F57; /* Farbe für den Text in Kopfzeilen-Zellen */
     font-size: 12pt; /* Schriftgröße */
     padding-bottom: 5pt;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 /* Stil für alle Tabellenzeilen-Zellen (td) */
 .agendaTabelle td, .naechsteTermine td {
     background-color: #3D3D3D; /* Hintergrundfarbe für normale Zeilen */
-    padding-top: 5px; /* Innenabstand */
+    padding-top: 5px; 
     padding-bottom: 5px;
     padding-left: 2px;
     padding-right: 2px;
