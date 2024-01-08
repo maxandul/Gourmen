@@ -347,3 +347,11 @@ p {
     padding: 10px 0; /* Polsterung oben und unten */
 }
 
+
+.stats-image {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
