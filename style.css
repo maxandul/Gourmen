@@ -348,10 +348,11 @@ p {
 }
 
 
-.stats-img {
-    display: block;
+.stats-img-hochkant {
+    display:
+     block;
     width: 100%;
-    max-width: 600px;
+    max-width: 300px;
     height: auto;
     margin: 0 auto;
 }
