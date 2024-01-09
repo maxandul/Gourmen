@@ -346,7 +346,7 @@ p {
     background-color: #000; /* Hintergrundfarbe der Fußzeile */ 
     text-align: center; /* Zentriert den Text in der Fußzeile */
     padding: 5px 0; /* Polsterung oben und unten */
-    padding-top: 20px;
+    padding-top: 25px;
     display: flex;
     flex-direction: column;
     }
@@ -365,7 +365,7 @@ p {
 }
 
 .footer img {
-    width: 45px;
+    width: 40px;
     height: auto;
 }
 
