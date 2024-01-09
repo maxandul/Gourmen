@@ -152,6 +152,17 @@ p {
     hyphens: auto;
 }
 
+ul {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+    color: #FFFFFF;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    text-align: justify;
+    hyphens: auto;
+}
+
 .legende {
     font-size: 8pt;
     color: #FFFFFF;
