@@ -25,7 +25,14 @@ html, body {
     justify-content: space-between;
     padding: 5px 32px; /* Vertikaler und horizontaler Abstand */
     z-index: 1000;
+    background: linear-gradient(
+        to bottom, 
+        rgba(148, 127, 87, 1) 2%, 
+        rgba(148, 127, 87, 0.66) 66%, 
+        rgba(148, 127, 87, 0.4) 100%
+    )
 }
+
 
 .logo-header {
     width: 20%;
@@ -86,7 +93,7 @@ html, body {
     display: block;
     z-index: 98;
     background-color: #3D3D3D;
-    padding-top: 120px;
+    padding-top: 160px;
     transition: 0.4s;
 
 }
