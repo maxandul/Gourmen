@@ -345,10 +345,9 @@ p {
 .footer {
     background-color: #000; /* Hintergrundfarbe der Fußzeile */ 
     text-align: center; /* Zentriert den Text in der Fußzeile */
-    padding: 5px 0; /* Polsterung oben und unten */
-    padding-top: 25px;
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
     }
 
 .footer-text {
@@ -365,14 +364,13 @@ p {
 }
 
 .footer img {
-    width: 40px;
+    width: 30px;
     height: auto;
 }
 
 
 .stats-img-hochkant {
-    display:
-     block;
+    display: block;
     width: 100%;
     max-width: 300px;
     height: auto;
