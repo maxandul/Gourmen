@@ -28,7 +28,9 @@ html, body {
 }
 
 .logo-header {
-    width: 75px;
+    width: 20%;
+    min-width: 75px;
+    max-width: 120px;
 }
 
 .headline{
