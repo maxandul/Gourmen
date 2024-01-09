@@ -161,6 +161,8 @@ ul {
     display: block;
     text-align: justify;
     hyphens: auto;
+    list-style-type: disc;
+    padding-left: 40px;
 }
 
 .legende {
