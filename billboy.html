@@ -19,7 +19,7 @@
 
     <div class="mobile-nav">
         <a href="index.html">Home</a>
-        <a href="billboy.html">BillBoy</a>
+        <a href="billbro.html">BillBro</a>
         <a href="agenda.html">Agenda</a>
         <a href="berichte.html">Berichte</a>
         <a href="stats.html">Stats</a>
@@ -75,7 +75,7 @@
             </div>
             <div class="rechner-buttons">
                 <button class="button" onclick="berechneTotal()">Start</button>
-                <button class="button" onclick="loescheAlles()">Löschen</button>
+                <button class="button" onclick="seiteZuruecksetzen()">Löschen</button>
                 <button class="button" onclick="speichereErgebnisse()">Speichern</button>
             </div>
         </div>
@@ -122,7 +122,7 @@
 
             function speichereErgebnisse() {
                 // Bestätigungsdialog anzeigen
-                var bestaetigung = confirm("Ergebnisse werden heruntergeladen. Schicke die Datei Andy oder stelle sie in unseren Chat. Merci :)");
+                var bestaetigung = confirm("Ergebnisse werden heruntergeladen. Schicke die Datei Andy oder stelle sie in unseren Chat. Yay, Statistik! :)");
 
                 // Wenn der Benutzer auf "OK" klickt
                 if (bestaetigung) {
@@ -139,6 +139,22 @@
                     URL.revokeObjectURL(url);
                 }
             }    
+
+            function zeigeErgebnisTabelle(differenzen) {
+                    let tabelle = "<table><tr><th>Name</th><th>Differenz</th><th>Rang</th></tr>";
+                    differenzen.forEach(d => {
+                        tabelle += `<tr><td>${d.name}</td><td>${d.differenz.toFixed(2)}</td><td>${d.rang}</td></tr>`;
+                    });
+                    tabelle += "</table>";
+                    document.getElementById('rangliste').innerHTML = tabelle;
+                    }
+
+                    function seiteZuruecksetzen() {
+                        var bestaetigung = confirm("Wirklich alles löschen?");
+                        if (bestaetigung) {
+                            location.reload(); // Aktualisiert die Seite
+                        }
+                    }
         </script> 
     </div>
     <footer>
