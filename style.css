@@ -28,7 +28,7 @@ html, body {
     background: linear-gradient(
         to bottom, 
         rgba(148, 127, 87, 1) 2%, 
-        rgba(148, 127, 87, 0.66) 66%, 
+        rgba(148, 127, 87, 0.6) 66%, 
         rgba(148, 127, 87, 0.4) 100%
     )
 }
