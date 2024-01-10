@@ -168,7 +168,6 @@
             <div class="rechner-buttons">
                 <button class="button" onclick="berechneTotal(); berechneDifferenzenUndZeigeErgebnisse()">Start</button>
                 <button class="button" onclick="seiteZuruecksetzen()">Löschen</button>
-                <button class="button" onclick="speichereErgebnisse()">Speichern</button>
             </div>
         </div>
 
@@ -176,13 +175,16 @@
             <div class="ergebniszeile"><span class="ergebnistitelFett">Total:</span> <span class="ergebniswertFett" id="totalErgebnis">0 CHF</span></div>
             <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag Vielfrasse:</span> <span class="ergebniswertFett" id="betrag1Ergebnis">0 CHF</span></div>
             <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag Genügsame:</span> <span class="ergebniswertFett" id="betrag2Ergebnis">0 CHF</span></div>
+            <br>
             <div class="ergebniszeile"><span class="ergebnistitel">Restaurant:</span> <span class="ergebniswert" id="restaurantErgebnis">-</span></div>
             <div class="ergebniszeile"><span class="ergebnistitel">Gruppengrösse:</span> <span class="ergebniswert" id="gruppeErgebnis">0 Pers.</span></div>
             <div class="ergebniszeile"><span class="ergebnistitel">Anzahl Vielfrasse:</span> <span class="ergebniswert" id="vielfrassErgebnis">0 Pers.</span></div>
             <div class="ergebniszeile"><span class="ergebnistitel">Anzahl Genügsame:</span> <span class="ergebniswert" id="genuegsamErgebnis">0 Pers.</span></div>
             <div class="ergebniszeile"><span class="ergebnistitel">Durchschnittsbetrag:</span> <span class="ergebniswert" id="durchschnittErgebnis">0 CHF</span></div>
         </div>
-        <br>
+        <div class="rechner-buttons">
+        <button class="button" onclick="speichereErgebnisse()">Speichern</button>
+        </div>
         <h2>Rangliste</h2>
         <div class="rangliste" id="rangliste"></div>
         <script>

@@ -178,10 +178,15 @@ p {
 
 .text-input-rechner {
     width: 50%;
+    font-size: 12pt;
 }
 
+.select-rechner {
+    font-size: 12pt;
+}
 .tipp-rechner, .betrag-input-rechner {
     width: 60px;
+    font-size: 12pt;
 }
 
 .input-rechner {

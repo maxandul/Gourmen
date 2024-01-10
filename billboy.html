@@ -53,23 +53,24 @@
         <div class="rechner">
             <div class="rechner-zeile">
                 <label for="restaurant">Restaurant:</label>
-                <input class="input-rechner" type="text" id="restaurant">
+                <input class="input-rechner" type="text" id="restaurant" placeholder="Name Restaurant">
             </div>
             <div class="rechner-zeile">
                 <label for="rechnung">Rechnungsbetrag:</label>
-                <input class="input-rechner" type="number" id="rechnung" min="0" max="5000">
+                <input class="input-rechner" type="number" id="rechnung" min="0" max="5000" placeholder="Betrag">
             </div>
             <div class="rechner-zeile">
                 <label for="vielfrasse">Vielfrasse:</label>
-                <input class="input-rechner" type="number" id="vielfrasse" min="2" max="50">
+                <input class="input-rechner" type="number" id="vielfrasse" min="2" max="50" placeholder="Anzahl">
             </div>
             <div class="rechner-zeile">
                 <label for="genuegsame">Genügsame:</label>
-                <input class="input-rechner" type="number" id="genuegsame" min="2" max="50">
+                <input class="input-rechner" type="number" id="genuegsame" min="2" max="50" placeholder="Anzahl">
             </div>
             <div class="rechner-zeile">
                 <label for="trinkgeld">Trinkgeld:</label>
                 <select class="input-rechner" id="trinkgeld">
+                    <option value="Auto">Automatisch</option>
                     <option value="0">0%</option>
                     <option value="0.05">5%</option>
                     <option value="0.10">10%</option>
@@ -84,8 +85,12 @@
 
         <div class="ergebnisse" id="ergebnisse">
             <div class="ergebniszeile"><span class="ergebnistitelFett">Total:</span> <span class="ergebniswertFett" id="totalErgebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Trinkgeld:</span> <span class="ergebniswert" id="trinkgeldBetragErgebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Trinkgeld %:</span> <span class="ergebniswert" id="trinkgeldProzentErgebnis">0 %</span></div>
+            <br>
             <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag Vielfrasse:</span> <span class="ergebniswertFett" id="betrag1Ergebnis">0 CHF</span></div>
             <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag Genügsame:</span> <span class="ergebniswertFett" id="betrag2Ergebnis">0 CHF</span></div>
+            <br>
             <div class="ergebniszeile"><span class="ergebnistitel">Restaurant:</span> <span class="ergebniswert" id="restaurantErgebnis">-</span></div>
             <div class="ergebniszeile"><span class="ergebnistitel">Gruppengrösse:</span> <span class="ergebniswert" id="gruppeErgebnis">0 Pers.</span></div>
             <div class="ergebniszeile"><span class="ergebnistitel">Durchschnittsbetrag:</span> <span class="ergebniswert" id="durchschnittErgebnis">0 CHF</span></div>
@@ -93,34 +98,65 @@
 
         <script>
             function berechneTotal() {
+                const restaurantName = document.getElementById('restaurant').value;
                 const rechnung = parseFloat(document.getElementById('rechnung').value);
                 const vielfrasse = parseInt(document.getElementById('vielfrasse').value);
                 const genuegsame = parseInt(document.getElementById('genuegsame').value);
-                const trinkgeld = parseFloat(document.getElementById('trinkgeld').value);
-                const restaurantName = document.getElementById('restaurant').value;
+                const trinkgeldOption = document.getElementById('trinkgeld').value;
+                let trinkgeldProzent = 0;
 
-                const total = rechnung + (rechnung * trinkgeld);
+                if (trinkgeldOption === 'Auto') {
+                    trinkgeldProzent = berechneAutoTrinkgeld(rechnung);
+                } else {
+                    trinkgeldProzent = parseFloat(trinkgeldOption);
+                }
+
+                const total = rechnung + (rechnung * trinkgeldProzent);
                 const gruppe = vielfrasse + genuegsame;
                 const durchschnitt = total / gruppe;
                 const betrag1 = (total / gruppe) + (total / gruppe * 0.25 * genuegsame / vielfrasse);
-                const betrag2 = (total / gruppe) * 0.75;
-    
+                const betrag2 = (total / gruppe) * 0.75 * genuegsame / genuegsame;
+
                 document.getElementById('restaurantErgebnis').textContent = restaurantName || "Nicht angegeben";
-                document.getElementById('totalErgebnis').textContent = total.toFixed(2) + ' CHF';
+                document.getElementById('totalErgebnis').textContent = total.toFixed(0) + ' CHF';
                 document.getElementById('gruppeErgebnis').textContent = gruppe + ' Pers.';
                 document.getElementById('durchschnittErgebnis').textContent = durchschnitt.toFixed(2) + ' CHF';
                 document.getElementById('betrag1Ergebnis').textContent = betrag1.toFixed(2) + ' CHF';
                 document.getElementById('betrag2Ergebnis').textContent = betrag2.toFixed(2) + ' CHF';
-            }   
-    
-            function loescheAlles() {
-                document.getElementById('restaurantErgebnis').textContent = '-';
-                document.getElementById('totalErgebnis').textContent = '0 CHF';
-                document.getElementById('gruppeErgebnis').textContent = '0 Pers.';
-                document.getElementById('durchschnittErgebnis').textContent = '0 CHF';
-                document.getElementById('betrag1Ergebnis').textContent = '0 CHF';
-                document.getElementById('betrag2Ergebnis').textContent = '0 CHF';
             }
+            
+            function berechneAutoTrinkgeld(rechnungsbetrag) {
+                let trinkgeldProzent;
+                let aufgerundeterBetrag;
+
+                if (rechnungsbetrag <= 200) {
+                    trinkgeldProzent = 0.095; 
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 5) * 5;
+                } else if (rechnungsbetrag <= 500) {
+                    trinkgeldProzent = 0.085    ; // 9% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 10) * 10;
+                } else if (rechnungsbetrag <= 1000) {
+                    trinkgeldProzent = 0.085; // 9% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 10) * 10;
+                } else if (rechnungsbetrag <= 1500) {
+                    trinkgeldProzent = 0.08; // 8% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 10) * 10;
+                } else if (rechnungsbetrag <= 2000) {
+                    trinkgeldProzent = 0.07; // 7% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 20) * 20;
+                } else {
+                    trinkgeldProzent = 0.05; // 6% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 50) * 50;
+                }
+
+                let trinkgeld = aufgerundeterBetrag - rechnungsbetrag;
+                let trinkgeldProzentEffektiv = trinkgeld / rechnungsbetrag;
+                
+                document.getElementById ('trinkgeldBetragErgebnis').textContent = trinkgeld.toFixed(0) + ' CHF';
+                document.getElementById ('trinkgeldProzentErgebnis').textContent = (trinkgeldProzentEffektiv * 100).toFixed(2) + '%';
+                return trinkgeldProzentEffektiv;
+            }
+    
 
             function speichereErgebnisse() {
                 // Bestätigungsdialog anzeigen
@@ -151,12 +187,12 @@
                     document.getElementById('rangliste').innerHTML = tabelle;
                     }
 
-                    function seiteZuruecksetzen() {
-                        var bestaetigung = confirm("Wirklich alles löschen?");
-                        if (bestaetigung) {
-                            location.reload(); // Aktualisiert die Seite
-                        }
-                    }
+            function seiteZuruecksetzen() {
+                var bestaetigung = confirm("Wirklich alles löschen?");
+                if (bestaetigung) {
+                    location.reload(); // Aktualisiert die Seite
+                }
+            }
         </script> 
     </div>
     <footer>
