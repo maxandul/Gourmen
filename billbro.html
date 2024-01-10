@@ -155,7 +155,8 @@
             </div>
             <div class="rechner-zeile">
                 <label for="trinkgeld">Trinkgeld:</label>
-                <select class="select-rechner" id="trinkgeld">
+                <select class="input-rechner" id="trinkgeld">
+                    <option value="Auto">Automatisch</option>
                     <option value="0">0%</option>
                     <option value="0.05">5%</option>
                     <option value="0.10">10%</option>
@@ -173,6 +174,9 @@
 
         <div class="ergebnisse" id="ergebnisse">
             <div class="ergebniszeile"><span class="ergebnistitelFett">Total:</span> <span class="ergebniswertFett" id="totalErgebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Trinkgeld:</span> <span class="ergebniswert" id="trinkgeldBetragErgebnis">0 CHF</span></div>
+            <div class="ergebniszeile"><span class="ergebnistitel">Trinkgeld %:</span> <span class="ergebniswert" id="trinkgeldProzentErgebnis">0 %</span></div>
+            <br>
             <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag Vielfrasse:</span> <span class="ergebniswertFett" id="betrag1Ergebnis">0 CHF</span></div>
             <div class="ergebniszeile"><span class="ergebnistitelFett">Betrag Genügsame:</span> <span class="ergebniswertFett" id="betrag2Ergebnis">0 CHF</span></div>
             <br>
@@ -200,7 +204,13 @@
 
             function berechneTotal() {
                 const rechnung = parseFloat(document.getElementById('rechnung').value) || 0;
-                const trinkgeld = parseFloat(document.getElementById('trinkgeld').value) || 0;
+                const trinkgeldOption = document.getElementById('trinkgeld').value;
+                let trinkgeldProzent = 0;
+                    if (trinkgeldOption === 'Auto') {
+                        trinkgeldProzent = berechneAutoTrinkgeld(rechnung);
+                    } else {
+                        trinkgeldProzent = parseFloat(trinkgeldOption);
+                    };
                 const restaurantName = document.getElementById('restaurant').value;
 
                 const namen = ["Andy", "Cedi", "Dave", "Fabio", "Kevin", "Marco", "Mo", "Ramon", "Raphi", "Roman", "Thomi"];
@@ -216,7 +226,7 @@
                     }
                 });
 
-                const total = rechnung + (rechnung * trinkgeld);
+                const total = rechnung + (rechnung * trinkgeldProzent);
                 const gruppe = anzahlVielfrass + anzahlGenuegsam;
                 const durchschnitt = total / gruppe;
                 const betrag1 = (total / gruppe) + (total / gruppe * 0.25 * anzahlGenuegsam / anzahlVielfrass);
@@ -224,7 +234,7 @@
 
                 // Setzen der Ergebniswerte
                 document.getElementById('restaurantErgebnis').textContent = restaurantName || "Nicht angegeben";
-                document.getElementById('totalErgebnis').textContent = total.toFixed(2) + ' CHF';
+                document.getElementById('totalErgebnis').textContent = total.toFixed(0) + ' CHF';
                 document.getElementById('gruppeErgebnis').textContent = gruppe + ' Pers.';
                 document.getElementById('vielfrassErgebnis').textContent = anzahlVielfrass + ' Pers.';
                 document.getElementById('genuegsamErgebnis').textContent = anzahlGenuegsam + ' Pers.';
@@ -263,6 +273,38 @@
                 zeigeErgebnisTabelle(differenzen);
             }
 
+            function berechneAutoTrinkgeld(rechnungsbetrag) {
+                let trinkgeldProzent;
+                let aufgerundeterBetrag;
+
+                if (rechnungsbetrag <= 200) {
+                    trinkgeldProzent = 0.095; 
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 5) * 5;
+                } else if (rechnungsbetrag <= 500) {
+                    trinkgeldProzent = 0.085    ; // 9% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 10) * 10;
+                } else if (rechnungsbetrag <= 1000) {
+                    trinkgeldProzent = 0.085; // 9% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 10) * 10;
+                } else if (rechnungsbetrag <= 1500) {
+                    trinkgeldProzent = 0.08; // 8% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 10) * 10;
+                } else if (rechnungsbetrag <= 2000) {
+                    trinkgeldProzent = 0.07; // 7% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 20) * 20;
+                } else {
+                    trinkgeldProzent = 0.05; // 6% Trinkgeld
+                    aufgerundeterBetrag = Math.ceil((rechnungsbetrag * (1 + trinkgeldProzent)) / 50) * 50;
+                }
+
+                let trinkgeld = aufgerundeterBetrag - rechnungsbetrag;
+                let trinkgeldProzentEffektiv = trinkgeld / rechnungsbetrag;
+                
+                document.getElementById ('trinkgeldBetragErgebnis').textContent = trinkgeld.toFixed(0) + ' CHF';
+                document.getElementById ('trinkgeldProzentErgebnis').textContent = (trinkgeldProzentEffektiv * 100).toFixed(2) + '%';
+                return trinkgeldProzentEffektiv;
+            }
+            
             function zeigeErgebnisTabelle(differenzen) {
                     let tabelle = "<table><tr><th>Name</th><th>Differenz</th><th>Rang</th></tr>";
                     differenzen.forEach(d => {
